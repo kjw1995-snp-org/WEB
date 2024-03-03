@@ -1,0 +1,132 @@
+<!-- Concatenated js plugins and jQuery -->
+<!--<script src="/js/app.js"></script>-->
+<script src="https://js.stripe.com/v3/"></script>
+
+<!-- Core js -->
+<script src="/js/global.js"></script>
+
+<!-- Navigation options js -->
+<script src="/js/navigation/navbar-v1.js"></script>
+<script src="/js/navigation/navbar-v2.js"></script>
+<script src="/js/navigation/navbar-mobile.js"></script>
+<script src="/js/navigation/navbar-options.js"></script>
+<script src="/js/navigation/sidebar-v1.js"></script>
+
+<!-- Core instance js -->
+<script src="/js/main.js"></script>
+<script src="/js/pages/chat.js"></script>
+<script src="/js/touch.js"></script>
+<script src="/js/tour.js"></script>
+
+<!-- Components js -->
+<script src="/js/pages/explorer.js"></script>
+<script src="/js/components/widgets.js"></script>
+<script src="/js/components/modal-uploader.js"></script>
+<script src="/js/components/popovers-users.js"></script>
+<script src="/js/components/popovers-pages.js"></script>
+<script src="/js/components/lightbox.js"></script>
+
+<!-- Landing page js -->
+{{#ifpage 'index'}}
+<script src="/js/pages/landing.js"></script>
+{{/ifpage}}
+
+<!-- Signup page js -->
+{{#ifpage 'signup'}}
+<script src="/js/pages/signup.js"></script>
+{{/ifpage}}
+
+<!-- Feed pages js -->
+{{#ifpage 'navbar-v1-feed' 'navbar-v1-feed-sidebar' 'navbar-v1-feed-slider'
+'navbar-v1-profile-main' 'navbar-v1-pages-main' 'navbar-v2-feed'
+'navbar-v2-feed-sidebar' 'navbar-v2-feed-slider' 'navbar-v2-profile-main'
+'navbar-v2-pages-main' 'sidebar-v1-feed' 'sidebar-v1-profile-main'
+'sidebar-v1-pages-main' }}
+<script src="/js/pages/feed.js"></script>
+{{/ifpage}} {{#ifpage 'navbar-v1-feed' 'navbar-v1-feed-sidebar' 'navbar-v2-feed'
+'navbar-v2-feed-sidebar' 'sidebar-v1-feed' }}
+<script src="/js/components/webcam.js"></script>
+<script src="/js/components/compose.js"></script>
+<script src="/js/components/autocompletes.js"></script>
+{{/ifpage}}
+
+<!-- profile js -->
+{{#ifpage 'navbar-v1-profile-main' 'navbar-v1-profile-about'
+'navbar-v1-profile-photos' 'navbar-v1-pages-main' 'navbar-v1-pages-about'
+'navbar-v1-pages-community' 'navbar-v1-pages-photos' 'navbar-v2-profile-minimal'
+'navbar-v2-profile-main' 'navbar-v2-profile-about' 'navbar-v2-profile-photos'
+'navbar-v2-pages-main' 'navbar-v2-pages-about' 'navbar-v2-pages-community'
+'navbar-v2-pages-photos' 'sidebar-v1-profile-minimal' 'sidebar-v1-profile-about'
+'sidebar-v1-profile-friends' 'sidebar-v1-profile-photos'
+'sidebar-v1-profile-main' 'sidebar-v1-pages-about' 'sidebar-v1-pages-community'
+'sidebar-v1-pages-photos' 'sidebar-v1-pages-main' }}
+<script src="/js/pages/profile.js"></script>
+{{/ifpage}}
+
+<!-- stories js -->
+{{#ifpage 'navbar-v1-stories-main' 'navbar-v1-stories-story'
+'navbar-v2-stories-main' 'navbar-v2-stories-story' 'sidebar-v1-stories-main'
+'sidebar-v1-stories-story' }}
+<script src="/js/pages/stories.js"></script>
+{{/ifpage}}
+
+<!-- friends js -->
+{{#ifpage 'navbar-v1-friends-grid-v1' 'sidebar-v1-friends-grid-v1' }}
+<script src="/js/pages/friends.js"></script>
+{{/ifpage}}
+
+<!-- questions js -->
+{{#ifpage 'navbar-v1-questions-categories' 'navbar-v1-questions-home'
+'navbar-v1-questions-settings' 'navbar-v1-questions-single'
+'navbar-v1-questions-stats' }}
+<script src="/js/pages/questions.js"></script>
+{{/ifpage}}
+
+<!-- video js -->
+{{#ifpage 'navbar-v1-videos-home' 'navbar-v1-videos-home-v2'
+'navbar-v1-videos-player' 'navbar-v2-videos-home' 'navbar-v2-videos-home-v2'
+'navbar-v2-videos-player' 'sidebar-v1-videos-home' 'sidebar-v1-videos-home-v2'
+'sidebar-v1-videos-player' }}
+<script src="/js/pages/videos.js"></script>
+{{/ifpage}}
+
+<!-- events js -->
+{{#ifpage 'navbar-v1-event' 'navbar-v1-events' }}
+<script src="/js/pages/events.js"></script>
+{{/ifpage}}
+
+<!-- news js -->
+{{#ifpage 'navbar-v1-news'}}
+<script src="/js/pages/news.js"></script>
+{{/ifpage}}
+
+<!-- shop js -->
+{{#ifpage 'navbar-v1-ecommerce-cart' 'navbar-v1-ecommerce-checkout'
+'navbar-v1-ecommerce-payment' 'navbar-v1-ecommerce-products'
+'navbar-v2-ecommerce-cart' 'navbar-v2-ecommerce-checkout'
+'navbar-v2-ecommerce-payment' 'navbar-v2-ecommerce-products'
+'sidebar-v1-ecommerce-products' 'sidebar-v1-ecommerce-cart'
+'sidebar-v1-ecommerce-checkout' 'sidebar-v1-ecommerce-payment' }}
+<script src="/js/pages/shop.js"></script>
+{{/ifpage}}
+
+<!-- inbox js -->
+{{#ifpage 'inbox'}}
+<script src="/js/pages/inbox.js"></script>
+{{/ifpage}}
+
+<!-- settings js -->
+{{#ifpage 'navbar-v1-settings-v1' 'sidebar-v1-settings-v1' }}
+<script src="/js/pages/settings.js"></script>
+{{/ifpage}}
+
+<!-- map page js -->
+{{#ifpage 'navbar-v1-map-1' 'navbar-v1-map-2' 'navbar-v2-map-1'
+'navbar-v2-map-2' 'sidebar-v1-map-1'}}
+<script src="/js/pages/map.js"></script>
+{{/ifpage}}
+
+<!-- elements page js -->
+{{#ifpage 'elements'}}
+<script src="/js/components/elements.js"></script>
+{{/ifpage}}

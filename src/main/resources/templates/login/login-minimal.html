@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+  <title>Friendkit | login-minimal</title>
+  <link rel="icon" type="image/png" href="/img/favicon.png" />
+
+  <!-- Google Tag Manager -->
+  <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-KQHJPZP')
+    </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800,900" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet"/>
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+  <link rel="stylesheet" href="/css/core.css" />
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQHJPZP" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="pageloader"></div>
+<div class="infraloader is-active"></div>
+
+<div class="signup-wrapper">
+
+  <!--Fake navigation-->
+  <div class="fake-nav">
+    <a th:href="${urls.MAIN_PAGE}" class="logo">
+      <img class="light-image" src="/img/vector/logo/friendkit-bold.svg" width="112" height="28" alt=""/>
+      <img class="dark-image" src="/img/vector/logo/friendkit-white.svg" width="112" height="28" alt=""/>
+    </a>
+  </div>
+
+  <div class="container">
+    <!--Container-->
+    <div class="login-container">
+      <div class="columns is-vcentered">
+        <div class="column is-6 image-column">
+          <!--Illustration-->
+          <img class="light-image login-image" src="/img/illustrations/login/login.svg" alt=""/>
+          <img class="dark-image login-image" src="/img/illustrations/login/login-dark.svg" alt=""/>
+        </div>
+        <div class="column is-6">
+          <h2 class="form-title">돌아오신것을 환영합니다.</h2>
+          <h3 class="form-subtitle">아이디와 비밀번호를 입력해주세요.</h3>
+
+          <!--Form-->
+          <div class="login-form">
+            <div class="form-panel">
+              <div class="field">
+                <label>아이디</label>
+                <div class="control">
+                  <input type="text" class="input" id="loginFormId" placeholder="아이디를 입력해주세요."/>
+                </div>
+              </div>
+              <div class="field">
+                <label>비밀번호</label>
+                <div class="control">
+                  <input type="password" class="input" id="loginFormPw" placeholder="비밀번호는 8자이상 20자 이하입니다."/>
+                </div>
+              </div>
+              <div class="field is-flex">
+                <div class="switch-block">
+                  <label class="f-switch">
+                    <input type="checkbox" class="is-switch" />
+                    <i></i>
+                  </label>
+                  <div class="meta">
+                    <p>쿠키 저장</p>
+                  </div>
+                </div>
+                <a>비밀번호찾기</a>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <a class="button is-solid primary-button is-fullwidth raised loginBtn">로그인</a>
+            </div>
+
+            <div class="account-link has-text-centered">
+              <a th:href="${urls.SIGN_PAGE}">회원가입</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<form id="frm">
+  <input type="hidden" id="loginId" name="loginId"/>
+  <input type="hidden" id="loginPw" name="loginPassword"/>
+</form>
+
+<!-- Concatenated js plugins and jQuery -->
+<script src="/js/app.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+<!-- Core js -->
+<script src="/js/global.js"></script>
+
+<!-- Navigation options js -->
+<script src="/js/navigation/navbar-v1.js"></script>
+<script src="/js/navigation/navbar-v2.js"></script>
+<script src="/js/navigation/navbar-mobile.js"></script>
+<script src="/js/navigation/navbar-options.js"></script>
+<script src="/js/navigation/sidebar-v1.js"></script>
+
+<!-- Core instance js -->
+<script src="/js/main.js"></script>
+<script src="/js/pages/chat.js"></script>
+<script src="/js/touch.js"></script>
+<script src="/js/tour.js"></script>
+
+<!-- Components js -->
+<script src="/js/pages/explorer.js"></script>
+<script src="/js/components/widgets.js"></script>
+<script src="/js/components/modal-uploader.js"></script>
+<script src="/js/components/popovers-users.js"></script>
+<script src="/js/components/popovers-pages.js"></script>
+<script src="/js/components/lightbox.js"></script>
+<script src="/js/pages/feed.js"></script>
+<script src="/js/components/webcam.js"></script>
+<script src="/js/components/compose.js"></script>
+<script src="/js/components/autocompletes.js"></script>
+<th:block th:fragment="scripts">
+  <script th:inline="javascript">
+    $(document).ready(function() {
+
+      var mainUrl = [[${urls.MAIN_PAGE}]];
+
+      $('.loginBtn').on('click', function() {
+
+        console.log('로그인 시작');
+
+        $('#loginId').val($('#loginFormId').val());
+        $('#loginPw').val($('#loginFormPw').val());
+
+        console.log($('#loginId').val());
+        console.log($('#loginPw').val());
+
+        $.ajax({
+          url: /*[[@{${urls.LOGIN_ACTION}}]]*/ "",
+          method: 'POST',
+          dataType: 'json',
+          data: $('#frm').serialize(),
+          success: function(result) {
+            if(result.status == 'SUCCESS') {
+              location.href = mainUrl;
+            } else {
+              alert(result.message);
+            }
+          },
+          error: function(err) {
+            console.dir(err);
+            alert('로그인 실패');
+          }
+        });
+
+      });
+    })
+  </script>
+</th:block>
+
+</body>
+</html>
+
+

@@ -1,0 +1,48 @@
+/*! core.scss | Friendkit | © Css Ninja. 2020-2021 */
+
+/* ==========================================================================
+Core SCSS file
+========================================================================== */
+
+/*
+    0. Imports
+*/
+
+/* ==========================================================================
+0. Imports
+========================================================================== */
+
+//Main variables
+@import 'abstracts/variables';
+
+//Bulma source import
+@import 'sass/bulma';
+
+//Layout imports
+@import 'layout/all';
+
+//Navigation imports
+@import 'navigation/all';
+
+//Components imports
+@import 'components/all';
+
+//Pages imports
+@import 'pages/all';
+
+//Layout imports dark
+@import 'dark/layout/all';
+
+//Navigation imports dark
+@import 'dark/navigation/all';
+
+//Components imports dark
+@import 'dark/components/all';
+
+//Pages imports dark
+@import 'dark/pages/all';
+
+$slick-font-path: '../fonts/';
+$slick-loader-path: '../fonts/';
+
+
