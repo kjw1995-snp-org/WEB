@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta http-equiv="x-ua-compatible" content="ie=chrome" />
 
   <title>메인</title>
   <link rel="icon" type="image/png" href="/img/favicon.png" />
@@ -45,7 +45,7 @@
 <div class="navbar navbar-v1 is-inline-flex is-transparent no-shadow no-background is-landing is-hidden-mobile">
   <div class="container is-desktop">
     <div class="navbar-brand">
-      <a th:href="${urls.MAIN_PAGE}" class="navbar-item">
+      <a th:href="${urls.MAIN_URI}" class="navbar-item">
         <img class="logo" src="/img/vector/logo/friendkit-bold.svg" alt=""/>
       </a>
     </div>
@@ -65,11 +65,11 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="navbar-item">
-            <a th:href="${urls.LOGIN_PAGE_MINIMAL}">
+            <a th:href="${urls.LOGIN_URI + '/v1'}">
               로그인
             </a>
           </div>
-          <a id="signup-button" th:href="${urls.SIGN_PAGE}" class="button is-cta is-solid primary-button raised">
+          <a id="signup-button" th:href="${urls.JOIN_URI}" class="button is-cta is-solid primary-button raised">
             회원가입
           </a>
         </div>
