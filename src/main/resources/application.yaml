@@ -1,11 +1,10 @@
-server:
-  port: 8059
-
 spring:
-  mvc:
-    static:
-      path:
-        pattern: /static/**
-  thymeleaf:
-    prefix: classpath:templates/
-    suffix: .html
+  application:
+    name: snp-web
+  profiles:
+    active: local
+  config:
+    import: optional:configserver:http://localhost:8887
+
+server:
+  port: 8001
