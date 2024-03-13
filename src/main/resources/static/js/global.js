@@ -61,7 +61,7 @@ function setThemeToLocalStorage(value) {
 
 function toggleTheme() {
   var theme = window.localStorage.getItem('theme')
-  console.log(theme)
+  // console.log(theme)
   if (theme != null && theme != undefined) {
     setThemeToLocalStorage(theme)
 

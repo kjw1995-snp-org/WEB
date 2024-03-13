@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
 @Getter
-@ConfigurationProperties("com.snp")
+@ConfigurationProperties("com.snp.web")
 @RefreshScope
 public class ConfigProperties {
 }

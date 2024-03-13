@@ -169,7 +169,7 @@ $(function () {
     }
   })
 
-  console.log(hopscotch.getState())
+  // console.log(hopscotch.getState())
 
   if (hopscotch.getState() === 'hello-friendkit:4') {
     hopscotch.startTour(tour, 4)
