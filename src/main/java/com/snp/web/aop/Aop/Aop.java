@@ -1,6 +1,6 @@
 package com.snp.web.aop.Aop;
 
-import com.snp.web.common.GlobalUrl;
+import com.snp.web.global.GlobalUrl;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;

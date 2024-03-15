@@ -1,4 +1,4 @@
-package com.snp.web.common;
+package com.snp.web.global;
 
 public class GlobalUrl {
 
@@ -13,11 +13,13 @@ public class GlobalUrl {
      * 로그인
      */
     public static final String LOGIN_URI = "/login";
+    public static final String LOGIN_ACTION = LOGIN_URI + "/action";
 
     /**
      * 조인
      */
     public static final String JOIN_URI = "/join";
+    public static final String JOIN_PROGRESS = JOIN_URI + "/progress";
 
     /**
      * 피드

@@ -1,6 +1,6 @@
 package com.snp.web.controller.login;
 
-import com.snp.web.common.GlobalUrl;
+import com.snp.web.global.GlobalUrl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

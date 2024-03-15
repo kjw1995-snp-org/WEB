@@ -46,7 +46,7 @@
 
   <!--Fake navigation-->
   <div class="fake-nav">
-    <a th:href="${urls.MAIN_PAGE}" class="logo">
+    <a th:href="${urls.MAIN_URI}" class="logo">
       <img class="light-image" src="/img/vector/logo/friendkit-bold.svg" width="112" height="28" alt=""/>
       <img class="dark-image" src="/img/vector/logo/friendkit-white.svg" width="112" height="28" alt=""/>
     </a>
@@ -161,7 +161,7 @@
             </div>
 
             <div class="account-link has-text-centered">
-              <a th:href="${urls.LOGIN_PAGE_MINIMAL}">
+              <a th:href="${urls.LOGIN_URI + '/v2'}">
                 로그인
               </a>
             </div>
@@ -227,13 +227,13 @@
 
     $.ajax({
 
-      url: /*[[@{${urls.SIGN_ACTION}}]]*/ "",
+      url: /*[[@{${urls.JOIN_PROGRESS}}]]*/ "",
       method: 'POST',
       dataType: 'json',
       contentType: 'application/json',
       data: JSON.stringify(signInfo),
       success: function() {
-        location.href = [[@{${urls.MAIN_PAGE}}]];
+        location.href = [[@{${urls.MAIN_URI}}]];
       },
       error: function(err) {
         alert('문제가 발생하였습니다');
