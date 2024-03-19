@@ -1,11 +1,12 @@
 package com.snp.web.service.join;
 
 import com.snp.web.common.url.UserServiceUrl;
-import com.snp.web.configuration.properties.base.BaseProperties;
+import com.snp.web.configuration.properties.BaseProperties;
 import com.snp.web.dto.api.response.ApiResponseDto;
 import com.snp.web.dto.join.request.JoinRequestDto;
-import com.snp.web.dto.join.response.JoinResponseDto;
 import com.snp.web.util.SenderUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -14,6 +15,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class JoinServiceImpl implements JoinService {
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private SenderUtils senderUtils;
@@ -24,17 +27,17 @@ public class JoinServiceImpl implements JoinService {
     @Override
     public ApiResponseDto joinProgress(JoinRequestDto requestDto) {
 
-        ApiResponseDto response = senderUtils.send(
-                baseProperties.getBaseUserService().getHost(),
-                UserServiceUrl.USER_JOIN_PROGRESS,
-                HttpMethod.POST,
-                MediaType.APPLICATION_JSON,
-                MediaType.APPLICATION_JSON,
-                requestDto,
-                new ParameterizedTypeReference<ApiResponseDto>() {}
-        );
+        return senderUtils.send
+                (
+                        baseProperties.getUserService().getHost(),
+                        UserServiceUrl.USER_JOIN_PROGRESS,
+                        HttpMethod.POST,
+                        MediaType.APPLICATION_JSON,
+                        MediaType.APPLICATION_JSON,
+                        requestDto,
+                        new ParameterizedTypeReference<ApiResponseDto>() {}
+                );
 
-        return response;
     }
 
 }

@@ -1,0 +1,3 @@
+base:
+  userService:
+    host: "http://localhost:7999"

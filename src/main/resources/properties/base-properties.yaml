@@ -1,3 +1,0 @@
-base:
-  user-service:
-    host: lb://snp-user-service
