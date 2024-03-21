@@ -6,12 +6,12 @@ import com.snp.web.dto.join.request.JoinRequestDto;
 import com.snp.web.global.GlobalUrl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
@@ -21,9 +21,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import javax.ws.rs.core.MediaType;
 
-@SpringBootTest
+@SpringBootTest(classes = JoinController.class)
 @AutoConfigureMockMvc
 @AutoConfigureRestDocs(uriScheme = "http", uriHost = "localhost", uriPort = 8889)
+@ExtendWith(RestDocumentationExtension.class)
 public class JoinControllerTest {
 
     @Autowired

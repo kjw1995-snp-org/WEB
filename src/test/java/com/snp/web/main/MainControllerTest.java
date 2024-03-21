@@ -1,5 +1,6 @@
 package com.snp.web.main;
 
+import com.snp.web.controller.main.MainController;
 import com.snp.web.global.GlobalUrl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,9 +16,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
-import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 
-@SpringBootTest
+@SpringBootTest(classes = MainController.class)
 @AutoConfigureMockMvc
 @AutoConfigureRestDocs(uriScheme = "http", uriHost = "localhost" , uriPort = 8889)
 @ExtendWith(RestDocumentationExtension.class)
