@@ -1,4 +1,4 @@
-package com.snp.web.configuration;
+package com.snp.web.configuration.web;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -28,6 +28,8 @@ public class WebConfiguration implements WebMvcConfigurer {
         registry.addResourceHandler("/data/**", "/assets/data/**")
                 .addResourceLocations("classpath:/static/js/data/")
                 .setCachePeriod(60 * 60 * 24 * 365);
+        registry.addResourceHandler("/docs/**")
+                .addResourceLocations("classpath:/static/docs/");
 
     }
 
