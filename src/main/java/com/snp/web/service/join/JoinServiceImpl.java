@@ -5,18 +5,22 @@ import com.snp.web.configuration.properties.BaseProperties;
 import com.snp.web.dto.api.response.ApiResponseDto;
 import com.snp.web.dto.join.request.JoinRequestDto;
 import com.snp.web.util.SenderUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class JoinServiceImpl implements JoinService {
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+    @Bean
+    private PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
 
     @Autowired
     private SenderUtils senderUtils;
@@ -26,6 +30,8 @@ public class JoinServiceImpl implements JoinService {
 
     @Override
     public ApiResponseDto joinProgress(JoinRequestDto requestDto) {
+
+        requestDto.setPassword(passwordEncoder().encode(requestDto.getPassword()));
 
         return senderUtils.send
                 (

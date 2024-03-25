@@ -16,10 +16,22 @@ include::{snippets}/main-controller-test/main-test/curl-request.adoc[]
 http-request
 include::{snippets}/main-controller-test/main-test/http-request.adoc[]
 
-회원가입 +
+[[회원가입]]
+=== 페이지
 curl-request
 include::{snippets}/join-controller-test/join-test/curl-request.adoc[]
 http-request
 include::{snippets}/join-controller-test/join-test/http-request.adoc[]
+
+=== 회원가입
+curl-request
+include::{snippets}/join-controller-test/join-progress-test/curl-request.adoc[]
+http-request
+include::{snippets}/join-controller-test/join-progress-test/http-request.adoc[]
+request-body
+include::{snippets}/join-controller-test/join-progress-test/request-body.adoc[]
+response-body
+include::{snippets}/join-controller-test/join-progress-test/response-body.adoc[]
+
 
 
