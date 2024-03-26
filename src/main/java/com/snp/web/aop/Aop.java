@@ -1,4 +1,4 @@
-package com.snp.web.aop.Aop;
+package com.snp.web.aop;
 
 import com.snp.web.global.GlobalUrl;
 import org.aspectj.lang.annotation.AfterReturning;

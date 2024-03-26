@@ -46,7 +46,7 @@
 
   <!--Fake navigation-->
   <div class="fake-nav">
-    <a th:href="${urls.MAIN_PAGE}" class="logo">
+    <a th:href="${urls.MAIN_URI}" class="logo">
       <img class="light-image" src="/img/vector/logo/friendkit-bold.svg" width="112" height="28" alt=""/>
       <img class="dark-image" src="/img/vector/logo/friendkit-white.svg" width="112" height="28" alt=""/>
     </a>
@@ -99,7 +99,7 @@
             </div>
 
             <div class="account-link has-text-centered">
-              <a th:href="${urls.SIGN_PAGE}">회원가입</a>
+              <a th:href="${urls.JOIN_URI}">회원가입</a>
             </div>
           </div>
         </div>
@@ -108,10 +108,6 @@
   </div>
 
 </div>
-<form id="frm">
-  <input type="hidden" id="loginId" name="loginId"/>
-  <input type="hidden" id="loginPw" name="loginPassword"/>
-</form>
 
 <!-- Concatenated js plugins and jQuery -->
 <script src="/js/app.js"></script>
@@ -148,25 +144,25 @@
   <script th:inline="javascript">
     $(document).ready(function() {
 
-      var mainUrl = [[${urls.MAIN_PAGE}]];
+      var mainUrl = [[${urls.MAIN_URI}]];
 
       $('.loginBtn').on('click', function() {
 
-        console.log('로그인 시작');
+        const loginForm = {
+          id : $('#loginFormId').val(),
+          password : $('#loginFormPw').val()
+        };
 
-        $('#loginId').val($('#loginFormId').val());
-        $('#loginPw').val($('#loginFormPw').val());
-
-        console.log($('#loginId').val());
-        console.log($('#loginPw').val());
+        console.dir(loginForm);
 
         $.ajax({
           url: /*[[@{${urls.LOGIN_ACTION}}]]*/ "",
           method: 'POST',
+          contentType: 'application/json',
           dataType: 'json',
-          data: $('#frm').serialize(),
+          data: JSON.stringify(loginForm),
           success: function(result) {
-            if(result.status == 'SUCCESS') {
+            if(result.status == 'SUC') {
               location.href = mainUrl;
             } else {
               alert(result.message);
