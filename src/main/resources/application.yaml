@@ -4,11 +4,12 @@ logging:
 
 spring:
   application:
-    name: snp-web
+    name: web
   profiles:
     active: local
   config:
     import: optional:configserver:http://localhost:8887
+
 
 eureka:
   client:
@@ -22,5 +23,3 @@ management:
     shutdown:
       enabled: true
 
-jwt:
-  import: optional:configserver:http://localhost:8887/snp-jwt-config/local
