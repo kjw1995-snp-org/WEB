@@ -20,9 +20,20 @@ public class JoinController {
     @Autowired
     private JoinService joinService;
 
+    /**
+     * 회원가입 페이지
+     * @return {@link ModelAndView} signup-v2.html
+     * @author kimjungwoo
+     */
     @GetMapping(GlobalUrl.JOIN_URI)
     public ModelAndView join() { return new ModelAndView("sign/signup-v2"); }
 
+    /**
+     * 회원가입
+     * @param requestDto
+     * @return {@link ApiResponseDto} 회원가입 결과
+     * @author kimjungwoo
+     */
     @PostMapping(GlobalUrl.JOIN_PROGRESS)
     @ResponseBody
     public ApiResponseDto joinProgress(@RequestBody JoinRequestDto requestDto) { return joinService.joinProgress(requestDto); }

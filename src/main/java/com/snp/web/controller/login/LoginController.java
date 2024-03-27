@@ -15,6 +15,12 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
+    /**
+     * 로그인 페이지
+     * @param version
+     * @return {@link ModelAndView} v1 = login.html, v2 = login-minimal.html
+     * @author kimjungwoo
+     */
     @GetMapping(GlobalUrl.LOGIN_URI + "/{version}")
     public ModelAndView v1(@PathVariable("version")String version) {
 
@@ -30,6 +36,12 @@ public class LoginController {
 
     }
 
+    /**
+     * 로그인
+     * @param loginRequestDto
+     * @return {@link ApiResponseDto} 로그인 결과
+     * @author kimjungwoo
+     */
     @PostMapping(GlobalUrl.LOGIN_ACTION)
     @ResponseBody
     public ApiResponseDto login(@RequestBody LoginRequestDto loginRequestDto) { return loginService.login(loginRequestDto); }

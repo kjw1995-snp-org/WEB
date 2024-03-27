@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.snp.web.controller.join.JoinController;
 import com.snp.web.dto.join.request.JoinRequestDto;
 import com.snp.web.global.GlobalUrl;
-import com.snp.web.service.join.JoinService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
