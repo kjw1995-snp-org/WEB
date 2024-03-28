@@ -1,7 +1,6 @@
 package com.snp.web.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -11,9 +10,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 @Component
+@Slf4j
 public class SenderUtils {
-
-    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private WebClient.Builder webClientBuilder;
@@ -56,8 +54,10 @@ public class SenderUtils {
                 .bodyValue(data == null ? "" : data);
 
         Mono<T> mono = req.retrieve().bodyToMono(responseClass);
+
         T response = mono.block();
-        logger.info("Response Data = {}", response);
+
+        log.info("WebClient Response = {}", response);
 
         return response;
     }

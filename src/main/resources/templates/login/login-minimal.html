@@ -148,22 +148,29 @@
 
       $('.loginBtn').on('click', function() {
 
-        const loginForm = {
+        const data = {
           id : $('#loginFormId').val(),
           password : $('#loginFormPw').val()
         };
 
-        console.dir(loginForm);
+        const request = {
+          data: data
+        };
+
+        console.dir(request);
 
         $.ajax({
           url: /*[[@{${urls.LOGIN_ACTION}}]]*/ "",
           method: 'POST',
           contentType: 'application/json',
           dataType: 'json',
-          data: JSON.stringify(loginForm),
+          data: JSON.stringify(request),
           success: function(result) {
             if(result.status == 'SUC') {
-              location.href = mainUrl;
+              console.dir(result);
+              localStorage.setItem('jwt',result.jwt_token);
+              alert(result.message);
+              // location.href = mainUrl;
             } else {
               alert(result.message);
             }

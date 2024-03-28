@@ -15,6 +15,8 @@ import org.springframework.restdocs.RestDocumentationExtension;
 public class LoginControllerTest {
 
     @Test
-    void
+    void testPage() {
+
+    }
 
 }

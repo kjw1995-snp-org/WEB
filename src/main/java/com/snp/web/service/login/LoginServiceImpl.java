@@ -3,11 +3,11 @@ package com.snp.web.service.login;
 import com.snp.web.common.url.UserServiceUrl;
 import com.snp.web.configuration.jwt.JwtConfig;
 import com.snp.web.configuration.properties.BaseProperties;
+import com.snp.web.dto.api.request.ApiRequestDto;
 import com.snp.web.dto.api.response.ApiResponseDto;
 import com.snp.web.dto.login.LoginRequestDto;
 import com.snp.web.util.SenderUtils;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SigningKeyResolverAdapter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -28,12 +28,14 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private JwtConfig jwtConfig;
 
+
+
     @Override
-    public ApiResponseDto login(LoginRequestDto loginRequestDto) {
+    public ApiResponseDto<Object> login(ApiRequestDto<LoginRequestDto> loginRequestDto) {
 
         log.info("Login Request = {}", loginRequestDto);
 
-        ApiResponseDto response = senderUtils.send
+        ApiResponseDto<Object> response = senderUtils.send
                 (
                         baseProperties.getUserService().getHost(),
                         UserServiceUrl.USER_LOGIN_ACTION,
@@ -41,15 +43,11 @@ public class LoginServiceImpl implements LoginService {
                         MediaType.APPLICATION_JSON,
                         MediaType.APPLICATION_JSON,
                         loginRequestDto,
-                        new ParameterizedTypeReference<ApiResponseDto>() {}
+                        new ParameterizedTypeReference<ApiResponseDto<Object>>() {}
                 );
-
-        log.info("Login Response = {}", response);
-        log.info("JWT = {}", Jwts.parserBuilder().setSigningKey(jwtConfig.getKey()).build().parse((String)response.getData()).toString());
 
         return response;
 
     }
-
 
 }
