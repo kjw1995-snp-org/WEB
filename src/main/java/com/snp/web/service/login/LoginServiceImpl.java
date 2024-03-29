@@ -1,13 +1,15 @@
 package com.snp.web.service.login;
 
 import com.snp.web.common.url.UserServiceUrl;
-import com.snp.web.configuration.jwt.JwtConfig;
 import com.snp.web.configuration.properties.BaseProperties;
 import com.snp.web.dto.api.request.ApiRequestDto;
 import com.snp.web.dto.api.response.ApiResponseDto;
-import com.snp.web.dto.login.LoginRequestDto;
+import com.snp.web.dto.login.request.LoginRequestDto;
+import com.snp.web.dto.login.response.LoginResponseDto;
+import com.snp.web.model.member.MemberModel;
+import com.snp.web.model.session.SessionModel;
 import com.snp.web.util.SenderUtils;
-import io.jsonwebtoken.Jwts;
+import com.snp.web.util.SessionUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -26,16 +28,14 @@ public class LoginServiceImpl implements LoginService {
     private SenderUtils senderUtils;
 
     @Autowired
-    private JwtConfig jwtConfig;
-
-
+    private SessionUtils sessionUtils;
 
     @Override
-    public ApiResponseDto<Object> login(ApiRequestDto<LoginRequestDto> loginRequestDto) {
+    public ApiResponseDto<LoginResponseDto> login(ApiRequestDto<LoginRequestDto> loginRequestDto) {
 
         log.info("Login Request = {}", loginRequestDto);
 
-        ApiResponseDto<Object> response = senderUtils.send
+        ApiResponseDto<LoginResponseDto> response = senderUtils.send
                 (
                         baseProperties.getUserService().getHost(),
                         UserServiceUrl.USER_LOGIN_ACTION,
@@ -43,8 +43,25 @@ public class LoginServiceImpl implements LoginService {
                         MediaType.APPLICATION_JSON,
                         MediaType.APPLICATION_JSON,
                         loginRequestDto,
-                        new ParameterizedTypeReference<ApiResponseDto<Object>>() {}
+                        new ParameterizedTypeReference<ApiResponseDto<LoginResponseDto>>() {}
                 );
+
+        if(response.getStatus() == ApiResponseDto.ApiResponseStatus.SUC) {
+
+            MemberModel memberModel = MemberModel.builder()
+                                                 .id(response.getData().getId())
+                                                 .name(response.getData().getName())
+                                                 .build();
+
+            log.info("세션설정");
+
+            sessionUtils.setUserSession(SessionModel.builder()
+                                                    .memberModel(memberModel)
+                                                    .build()
+            );
+
+
+        }
 
         return response;
 

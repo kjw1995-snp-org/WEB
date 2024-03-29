@@ -26,4 +26,9 @@ public class GlobalUrl {
      */
     public static final String FEED_URI = "/feed";
 
+    /**
+     * 마이페이지
+     */
+    public static final String PROFILE_URI = "/profile";
+
 }

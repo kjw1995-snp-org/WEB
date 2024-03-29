@@ -64,19 +64,26 @@
 
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="navbar-item">
-            <a th:href="${urls.LOGIN_URI + '/v1'}">
-              로그인 v1
+          <th:block th:if="${sessionInfo == null}">
+            <div class="navbar-item">
+              <a th:href="${urls.LOGIN_URI + '/v1'}">
+                로그인 v1
+              </a>
+            </div>
+            <div class="navbar-item">
+              <a th:href="${urls.LOGIN_URI + '/v2'}">
+                로그인 v2
+              </a>
+            </div>
+            <a id="signup-button" th:href="${urls.JOIN_URI}" class="button is-cta is-solid primary-button raised">
+              회원가입
             </a>
-          </div>
-          <div class="navbar-item">
-            <a th:href="${urls.LOGIN_URI + '/v2'}">
-              로그인 v2
+          </th:block>
+          <th:block th:if="${sessionInfo != null}">
+            <a id="signup-button" th:href="${urls.PROFILE_URI}" class="button is-cta is-solid primary-button raised">
+              [[${sessionInfo.memberModel.name}]] 님
             </a>
-          </div>
-          <a id="signup-button" th:href="${urls.JOIN_URI}" class="button is-cta is-solid primary-button raised">
-            회원가입
-          </a>
+          </th:block>
         </div>
       </div>
     </div>

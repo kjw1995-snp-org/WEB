@@ -3,11 +3,7 @@
   <!-- Timeline -->
   <div class="time is-hidden-mobile">
     <div class="img-container">
-      <img
-        src="https://via.placeholder.com/300x300"
-        data-demo-src="assets/img/avatars/jenna.png"
-        alt=""
-      />
+      <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/jenna.png" alt=""/>
     </div>
   </div>
   <!-- Post -->
@@ -18,12 +14,7 @@
       <div class="card-heading">
         <div class="user-block">
           <div class="image">
-            <img
-              src="https://via.placeholder.com/300x300"
-              data-demo-src="assets/img/avatars/jenna.png"
-              data-user-popover="0"
-              alt=""
-            />
+            <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/jenna.png" data-user-popover="0" alt=""/>
           </div>
           <div class="user-info">
             <a href="#">Jenna Davis</a>
@@ -31,7 +22,47 @@
           </div>
         </div>
         <!-- Right side dropdown -->
-        {{> feed-post-dropdown}}
+
+        <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+          <div>
+            <div class="button">
+              <i data-feather="more-vertical"></i>
+            </div>
+          </div>
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="#" class="dropdown-item">
+                <div class="media">
+                  <i data-feather="bookmark"></i>
+                  <div class="media-content">
+                    <h3>Bookmark</h3>
+                    <small>Add this post to your bookmarks.</small>
+                  </div>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="media">
+                  <i data-feather="bell"></i>
+                  <div class="media-content">
+                    <h3>Notify me</h3>
+                    <small>Send me the updates.</small>
+                  </div>
+                </div>
+              </a>
+              <hr class="dropdown-divider" />
+              <a href="#" class="dropdown-item">
+                <div class="media">
+                  <i data-feather="flag"></i>
+                  <div class="media-content">
+                    <h3>Flag</h3>
+                    <small>In case of inappropriate content.</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
       <!-- Header -->
 
@@ -51,49 +82,41 @@
         <div class="post-image">
           <!-- CSS triple wrap -->
           <div class="triple-grid">
-            <a
-              data-fancybox="profile-post4"
-              data-lightbox-type="comments"
-              data-thumb="assets/img/demo/unsplash/16.jpg"
-              href="https://via.placeholder.com/1600x900"
-              data-demo-href="assets/img/demo/unsplash/16.jpg"
-            >
-              <img
-                src="https://via.placeholder.com/1600x900"
-                data-demo-src="assets/img/demo/unsplash/16.jpg"
-                alt=""
-              />
+            <a data-fancybox="profile-post4" data-lightbox-type="comments" data-thumb="assets/img/demo/unsplash/16.jpg" href="https://via.placeholder.com/1600x900" data-demo-href="assets/img/demo/unsplash/16.jpg">
+              <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/demo/unsplash/16.jpg" alt=""/>
             </a>
-            <a
-              class="is-half"
-              data-fancybox="profile-post4"
-              data-lightbox-type="comments"
-              data-thumb="assets/img/demo/unsplash/14.jpg"
-              href="https://via.placeholder.com/1600x900"
-              data-demo-href="assets/img/demo/unsplash/14.jpg"
-            >
-              <img
-                src="https://via.placeholder.com/1600x900"
-                data-demo-src="assets/img/demo/unsplash/14.jpg"
-                alt=""
-              />
+            <a class="is-half" data-fancybox="profile-post4" data-lightbox-type="comments" data-thumb="assets/img/demo/unsplash/14.jpg" href="https://via.placeholder.com/1600x900" data-demo-href="assets/img/demo/unsplash/14.jpg">
+              <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/demo/unsplash/14.jpg" alt=""/>
             </a>
-            <a
-              class="is-half"
-              data-fancybox="profile-post4"
-              data-lightbox-type="comments"
-              data-thumb="assets/img/demo/unsplash/15.jpg"
-              href="https://via.placeholder.com/1600x900"
-              data-demo-href="assets/img/demo/unsplash/15.jpg"
-            >
-              <img
-                src="https://via.placeholder.com/1600x900"
-                data-demo-src="assets/img/demo/unsplash/15.jpg"
-                alt=""
-              />
+            <a class="is-half" data-fancybox="profile-post4" data-lightbox-type="comments" data-thumb="assets/img/demo/unsplash/15.jpg" href="https://via.placeholder.com/1600x900" data-demo-href="assets/img/demo/unsplash/15.jpg">
+              <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/demo/unsplash/15.jpg" alt=""/>
             </a>
             <!-- Post actions -->
-            {{> feed-post-actions}}
+
+            <div class="like-wrapper">
+              <a href="javascript:void(0);" class="like-button">
+                <i class="mdi mdi-heart not-liked bouncy"></i>
+                <i class="mdi mdi-heart is-liked bouncy"></i>
+                <span class="like-overlay"></span>
+              </a>
+            </div>
+
+            <div class="fab-wrapper is-share">
+              <a
+                      href="javascript:void(0);"
+                      class="small-fab share-fab modal-trigger"
+                      data-modal="share-modal"
+              >
+                <i data-feather="link-2"></i>
+              </a>
+            </div>
+
+            <div class="fab-wrapper is-comment">
+              <a href="javascript:void(0);" class="small-fab">
+                <i data-feather="message-circle"></i>
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -103,36 +126,11 @@
       <div class="card-footer">
         <!-- Followers -->
         <div class="likers-group">
-          <img
-            src="https://via.placeholder.com/300x300"
-            data-demo-src="assets/img/avatars/rolf.jpg"
-            data-user-popover="13"
-            alt=""
-          />
-          <img
-            src="https://via.placeholder.com/300x300"
-            data-demo-src="assets/img/avatars/mike.jpg"
-            data-user-popover="12"
-            alt=""
-          />
-          <img
-            src="https://via.placeholder.com/300x300"
-            data-demo-src="assets/img/avatars/daniel.jpg"
-            data-user-popover="3"
-            alt=""
-          />
-          <img
-            src="https://via.placeholder.com/300x300"
-            data-demo-src="assets/img/avatars/elise.jpg"
-            data-user-popover="6"
-            alt=""
-          />
-          <img
-            src="https://via.placeholder.com/300x300"
-            data-demo-src="assets/img/avatars/david.jpg"
-            data-user-popover="4"
-            alt=""
-          />
+          <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/rolf.jpg" data-user-popover="13" alt=""/>
+          <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/mike.jpg" data-user-popover="12" alt=""/>
+          <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/daniel.jpg" data-user-popover="3" alt=""/>
+          <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/elise.jpg" data-user-popover="6" alt=""/>
+          <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/david.jpg" data-user-popover="4" alt=""/>
         </div>
         <div class="likers-text">
           <p>
@@ -179,13 +177,7 @@
           <!-- User image -->
           <div class="media-left">
             <div class="image">
-              <img
-                src="https://via.placeholder.com/300x300"
-                data-demo-src="assets/img/avatars/stella.jpg"
-                data-user-popover="4"
-                alt=""
-              />
-              data-user-popover="2" alt="">
+              <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/stella.jpg" data-user-popover="4" alt=""/>
             </div>
           </div>
           <!-- Content -->
@@ -214,13 +206,7 @@
               <!-- User image -->
               <div class="media-left">
                 <div class="image">
-                  <img
-                    src="https://via.placeholder.com/300x300"
-                    data-demo-src="assets/img/avatars/jenna.png"
-                    data-user-popover="4"
-                    alt=""
-                  />
-                  data-user-popover="0" alt="">
+                  <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/jenna.png" data-user-popover="4" alt=""/>
                 </div>
               </div>
               <!-- Content -->
@@ -243,7 +229,40 @@
                 </div>
               </div>
               <!-- Right side dropdown -->
-              <div class="media-right">{{> comment-dropdown}}</div>
+              <div class="media-right">
+
+                <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+                  <div>
+                    <div class="button">
+                      <i data-feather="more-vertical"></i>
+                    </div>
+                  </div>
+                  <div class="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                      <a class="dropdown-item">
+                        <div class="media">
+                          <i data-feather="x"></i>
+                          <div class="media-content">
+                            <h3>Hide</h3>
+                            <small>Hide this comment.</small>
+                          </div>
+                        </div>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a href="#" class="dropdown-item">
+                        <div class="media">
+                          <i data-feather="flag"></i>
+                          <div class="media-content">
+                            <h3>Report</h3>
+                            <small>Report this comment.</small>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
             <!-- /Nested Comment -->
 
@@ -252,13 +271,7 @@
               <!-- User image -->
               <div class="media-left">
                 <div class="image">
-                  <img
-                    src="https://via.placeholder.com/300x300"
-                    data-demo-src="assets/img/avatars/david.jpg"
-                    data-user-popover="4"
-                    alt=""
-                  />
-                  data-user-popover="4" alt="">
+                  <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/david.jpg" data-user-popover="4" alt=""/>
                 </div>
               </div>
               <!-- Content -->
@@ -281,7 +294,40 @@
                 </div>
               </div>
               <!-- Right side dropdown -->
-              <div class="media-right">{{> comment-dropdown}}</div>
+              <div class="media-right">
+
+                <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+                  <div>
+                    <div class="button">
+                      <i data-feather="more-vertical"></i>
+                    </div>
+                  </div>
+                  <div class="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                      <a class="dropdown-item">
+                        <div class="media">
+                          <i data-feather="x"></i>
+                          <div class="media-content">
+                            <h3>Hide</h3>
+                            <small>Hide this comment.</small>
+                          </div>
+                        </div>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a href="#" class="dropdown-item">
+                        <div class="media">
+                          <i data-feather="flag"></i>
+                          <div class="media-content">
+                            <h3>Report</h3>
+                            <small>Report this comment.</small>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
             <!-- /Nested Comment -->
 
@@ -290,13 +336,7 @@
               <!-- User image -->
               <div class="media-left">
                 <div class="image">
-                  <img
-                    src="https://via.placeholder.com/300x300"
-                    data-demo-src="assets/img/avatars/milly.jpg"
-                    data-user-popover="4"
-                    alt=""
-                  />
-                  data-user-popover="7" alt="">
+                  <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/milly.jpg" data-user-popover="4" alt=""/>
                 </div>
               </div>
               <!-- Content -->
@@ -319,12 +359,78 @@
                 </div>
               </div>
               <!-- Right side dropdown -->
-              <div class="media-right">{{> comment-dropdown}}</div>
+              <div class="media-right">
+
+                <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+                  <div>
+                    <div class="button">
+                      <i data-feather="more-vertical"></i>
+                    </div>
+                  </div>
+                  <div class="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                      <a class="dropdown-item">
+                        <div class="media">
+                          <i data-feather="x"></i>
+                          <div class="media-content">
+                            <h3>Hide</h3>
+                            <small>Hide this comment.</small>
+                          </div>
+                        </div>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a href="#" class="dropdown-item">
+                        <div class="media">
+                          <i data-feather="flag"></i>
+                          <div class="media-content">
+                            <h3>Report</h3>
+                            <small>Report this comment.</small>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
             <!-- /Nested Comment -->
           </div>
           <!-- Right side dropdown -->
-          <div class="media-right">{{> comment-dropdown}}</div>
+          <div class="media-right">
+
+            <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+              <div>
+                <div class="button">
+                  <i data-feather="more-vertical"></i>
+                </div>
+              </div>
+              <div class="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a class="dropdown-item">
+                    <div class="media">
+                      <i data-feather="x"></i>
+                      <div class="media-content">
+                        <h3>Hide</h3>
+                        <small>Hide this comment.</small>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item">
+                    <div class="media">
+                      <i data-feather="flag"></i>
+                      <div class="media-content">
+                        <h3>Report</h3>
+                        <small>Report this comment.</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
         <!-- /Comment -->
 
@@ -333,13 +439,7 @@
           <!-- User image -->
           <div class="media-left">
             <div class="image">
-              <img
-                src="https://via.placeholder.com/300x300"
-                data-demo-src="assets/img/avatars/daniel.jpg"
-                data-user-popover="4"
-                alt=""
-              />
-              data-user-popover="3" alt="">
+              <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/daniel.jpg" data-user-popover="4" alt=""/>
             </div>
           </div>
           <!-- Content -->
@@ -362,7 +462,40 @@
             </div>
           </div>
           <!-- Right side dropdown -->
-          <div class="media-right">{{> comment-dropdown}}</div>
+          <div class="media-right">
+
+            <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+              <div>
+                <div class="button">
+                  <i data-feather="more-vertical"></i>
+                </div>
+              </div>
+              <div class="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a class="dropdown-item">
+                    <div class="media">
+                      <i data-feather="x"></i>
+                      <div class="media-content">
+                        <h3>Hide</h3>
+                        <small>Hide this comment.</small>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item">
+                    <div class="media">
+                      <i data-feather="flag"></i>
+                      <div class="media-content">
+                        <h3>Report</h3>
+                        <small>Report this comment.</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
         <!-- /Comment -->
 
@@ -371,13 +504,7 @@
           <!-- User image -->
           <div class="media-left">
             <div class="image">
-              <img
-                src="https://via.placeholder.com/300x300"
-                data-demo-src="assets/img/avatars/david.jpg"
-                data-user-popover="4"
-                alt=""
-              />
-              data-user-popover="4" alt="">
+              <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/david.jpg" data-user-popover="4" alt=""/>
             </div>
           </div>
           <!-- Content -->
@@ -403,13 +530,7 @@
               <!-- User image -->
               <div class="media-left">
                 <div class="image">
-                  <img
-                    src="https://via.placeholder.com/300x300"
-                    data-demo-src="assets/img/avatars/stella.jpg"
-                    data-user-popover="4"
-                    alt=""
-                  />
-                  data-user-popover="2" alt="">
+                  <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/stella.jpg" data-user-popover="4" alt=""/>
                 </div>
               </div>
               <!-- Content -->
@@ -432,12 +553,78 @@
                 </div>
               </div>
               <!-- Right side dropdown -->
-              <div class="media-right">{{> comment-dropdown}}</div>
+              <div class="media-right">
+
+                <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+                  <div>
+                    <div class="button">
+                      <i data-feather="more-vertical"></i>
+                    </div>
+                  </div>
+                  <div class="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                      <a class="dropdown-item">
+                        <div class="media">
+                          <i data-feather="x"></i>
+                          <div class="media-content">
+                            <h3>Hide</h3>
+                            <small>Hide this comment.</small>
+                          </div>
+                        </div>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a href="#" class="dropdown-item">
+                        <div class="media">
+                          <i data-feather="flag"></i>
+                          <div class="media-content">
+                            <h3>Report</h3>
+                            <small>Report this comment.</small>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
             <!-- /Nested Comment -->
           </div>
           <!-- Right side dropdown -->
-          <div class="media-right">{{> comment-dropdown}}</div>
+          <div class="media-right">
+
+            <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+              <div>
+                <div class="button">
+                  <i data-feather="more-vertical"></i>
+                </div>
+              </div>
+              <div class="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a class="dropdown-item">
+                    <div class="media">
+                      <i data-feather="x"></i>
+                      <div class="media-content">
+                        <h3>Hide</h3>
+                        <small>Hide this comment.</small>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item">
+                    <div class="media">
+                      <i data-feather="flag"></i>
+                      <div class="media-content">
+                        <h3>Report</h3>
+                        <small>Report this comment.</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
         <!-- /Comment -->
 
@@ -446,13 +633,7 @@
           <!-- User image -->
           <div class="media-left">
             <div class="image">
-              <img
-                src="https://via.placeholder.com/300x300"
-                data-demo-src="assets/img/avatars/mike.jpg"
-                data-user-popover="4"
-                alt=""
-              />
-              data-user-popover="12" alt="">
+              <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/mike.jpg" data-user-popover="4" alt=""/>
             </div>
           </div>
           <!-- Content -->
@@ -474,7 +655,40 @@
             </div>
           </div>
           <!-- Right side dropdown -->
-          <div class="media-right">{{> comment-dropdown}}</div>
+          <div class="media-right">
+
+            <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+              <div>
+                <div class="button">
+                  <i data-feather="more-vertical"></i>
+                </div>
+              </div>
+              <div class="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a class="dropdown-item">
+                    <div class="media">
+                      <i data-feather="x"></i>
+                      <div class="media-content">
+                        <h3>Hide</h3>
+                        <small>Hide this comment.</small>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item">
+                    <div class="media">
+                      <i data-feather="flag"></i>
+                      <div class="media-content">
+                        <h3>Report</h3>
+                        <small>Report this comment.</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
         <!-- /Comment -->
 
@@ -504,13 +718,7 @@
             <!-- Additional actions -->
             <div class="actions">
               <div class="image is-32x32">
-                <img
-                  class="is-rounded"
-                  src="https://via.placeholder.com/300x300"
-                  data-demo-src="assets/img/avatars/jenna.png"
-                  data-user-popover="0"
-                  alt=""
-                />
+                <img class="is-rounded" src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/jenna.png" data-user-popover="0" alt=""/>
               </div>
               <div class="toolbar">
                 <div class="action is-auto">

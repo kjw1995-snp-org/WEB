@@ -1,4 +1,4 @@
-package com.snp.web.dto.login;
+package com.snp.web.dto.login.request;
 
 import lombok.Data;
 

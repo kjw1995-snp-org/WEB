@@ -2,7 +2,8 @@ package com.snp.web.controller.login;
 
 import com.snp.web.dto.api.request.ApiRequestDto;
 import com.snp.web.dto.api.response.ApiResponseDto;
-import com.snp.web.dto.login.LoginRequestDto;
+import com.snp.web.dto.login.request.LoginRequestDto;
+import com.snp.web.dto.login.response.LoginResponseDto;
 import com.snp.web.global.GlobalUrl;
 import com.snp.web.service.login.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ public class LoginController {
      */
     @PostMapping(GlobalUrl.LOGIN_ACTION)
     @ResponseBody
-    public ApiResponseDto<Object> login(@RequestBody ApiRequestDto<LoginRequestDto> loginRequestDto) { return loginService.login(loginRequestDto); }
+    public ApiResponseDto<LoginResponseDto> login(@RequestBody ApiRequestDto<LoginRequestDto> loginRequestDto) { return loginService.login(loginRequestDto); }
 
 
 }
