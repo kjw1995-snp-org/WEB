@@ -83,6 +83,11 @@
             <a id="signup-button" th:href="${urls.PROFILE_URI}" class="button is-cta is-solid primary-button raised">
               [[${sessionInfo.memberModel.name}]] 님
             </a>
+            <div class="navbar-item">
+              <a th:href="${urls.LOGOUT_URI}">
+                로그아웃
+              </a>
+            </div>
           </th:block>
         </div>
       </div>

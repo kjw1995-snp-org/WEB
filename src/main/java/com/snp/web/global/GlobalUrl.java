@@ -15,6 +15,8 @@ public class GlobalUrl {
     public static final String LOGIN_URI = "/login";
     public static final String LOGIN_ACTION = LOGIN_URI + "/action";
 
+    public static final String LOGOUT_URI = "/logout";
+
     /**
      * 조인
      */

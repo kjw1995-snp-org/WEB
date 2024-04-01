@@ -24,6 +24,4 @@ public abstract class ServletUtils {
         return getRequest().getSession();
     }
 
-
-
 }

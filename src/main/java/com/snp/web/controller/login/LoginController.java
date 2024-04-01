@@ -6,6 +6,7 @@ import com.snp.web.dto.login.request.LoginRequestDto;
 import com.snp.web.dto.login.response.LoginResponseDto;
 import com.snp.web.global.GlobalUrl;
 import com.snp.web.service.login.LoginService;
+import com.snp.web.util.SessionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
+
+    @Autowired
+    private SessionUtils sessionUtils;
 
     @Autowired
     private LoginService loginService;
@@ -38,6 +42,14 @@ public class LoginController {
 
     }
 
+    @GetMapping(GlobalUrl.LOGOUT_URI)
+    public String logout() {
+
+        sessionUtils.removeSession();
+
+        return "redirect:" + GlobalUrl.MAIN_URI;
+    }
+
     /**
      * 로그인
      * @param loginRequestDto
@@ -47,6 +59,5 @@ public class LoginController {
     @PostMapping(GlobalUrl.LOGIN_ACTION)
     @ResponseBody
     public ApiResponseDto<LoginResponseDto> login(@RequestBody ApiRequestDto<LoginRequestDto> loginRequestDto) { return loginService.login(loginRequestDto); }
-
 
 }

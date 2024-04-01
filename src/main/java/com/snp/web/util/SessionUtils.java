@@ -14,6 +14,8 @@ public class SessionUtils {
 
     public SessionModel getUserSession() { return getAttribute(USER_SESSION_KEY); }
 
+    public void removeSession() { removeAttribute(USER_SESSION_KEY); }
+
     private SessionModel getAttribute(String key) {
         return (SessionModel)ServletUtils.getSession().getAttribute(key);
     }
@@ -21,5 +23,8 @@ public class SessionUtils {
     private void setAttribute(String key, Object value) {
         ServletUtils.getSession().setAttribute(key, value);
     }
+
+
+    private void removeAttribute(String key) { ServletUtils.getSession().removeAttribute(key); }
 
 }
