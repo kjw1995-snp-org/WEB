@@ -142,9 +142,11 @@
 <script src="/js/components/autocompletes.js"></script>
 <th:block th:fragment="scripts">
   <script th:inline="javascript">
-    $(document).ready(function() {
 
-      var mainUrl = [[${urls.MAIN_URI}]];
+    const mainUrl = /*[[${urls.MAIN_URI}]]*/ "";
+    const loginActionUrl = /*[[@{${urls.LOGIN_ACTION}}]]*/ "";
+
+    $(document).ready(function() {
 
       $('.loginBtn').on('click', function() {
 
@@ -153,35 +155,33 @@
           password : $('#loginFormPw').val()
         };
 
-        const request = {
-          data: data
-        };
-
-        console.dir(request);
-
         $.ajax({
-          url: /*[[@{${urls.LOGIN_ACTION}}]]*/ "",
+          url: loginActionUrl,
           method: 'POST',
           contentType: 'application/json',
           dataType: 'json',
-          data: JSON.stringify(request),
+          data: JSON.stringify({ data }),
           success: function(result) {
             if(result.status == 'SUC') {
-              console.dir(result);
               localStorage.setItem('jwt',result.jwt_token);
-              alert(result.message);
               location.href = mainUrl;
             } else {
               alert(result.message);
             }
           },
           error: function(err) {
-            console.dir(err);
             alert('로그인 실패');
           }
         });
 
       });
+
+      $(document).keypress(function(event) {
+        if(event.which === 13) {
+          $('.loginBtn').click();
+        }
+      });
+
     })
   </script>
 </th:block>

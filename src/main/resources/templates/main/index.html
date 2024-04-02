@@ -65,26 +65,26 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <th:block th:if="${sessionInfo == null}">
-            <div class="navbar-item">
-              <a th:href="${urls.LOGIN_URI + '/v1'}">
+            <div class="navbar-item ">
+              <a class="navbar-login-btn" th:href="${urls.LOGIN_URI + '/v1'}">
                 로그인 v1
               </a>
             </div>
             <div class="navbar-item">
-              <a th:href="${urls.LOGIN_URI + '/v2'}">
+              <a class="navbar-login-btn" th:href="${urls.LOGIN_URI + '/v2'}">
                 로그인 v2
               </a>
             </div>
-            <a id="signup-button" th:href="${urls.JOIN_URI}" class="button is-cta is-solid primary-button raised">
+            <a id="signup-button navbar-sign-btn" th:href="${urls.JOIN_URI}" class="button is-cta is-solid primary-button raised">
               회원가입
             </a>
           </th:block>
           <th:block th:if="${sessionInfo != null}">
-            <a id="signup-button" th:href="${urls.PROFILE_URI}" class="button is-cta is-solid primary-button raised">
+            <a id="signup-button navbar-profile-btn" th:href="${urls.PROFILE_URI}" class="button is-cta is-solid primary-button raised">
               [[${sessionInfo.memberModel.name}]] 님
             </a>
             <div class="navbar-item">
-              <a th:href="${urls.LOGOUT_URI}">
+              <a class="logout-btn" th:href="${urls.LOGOUT_URI}">
                 로그아웃
               </a>
             </div>
@@ -95,23 +95,12 @@
   </div>
 </div>
 
-<nav
-        class="navbar mobile-navbar is-landing is-hidden-desktop"
-        aria-label="main navigation"
->
+<nav class="navbar mobile-navbar is-landing is-hidden-desktop" aria-label="main navigation">
   <!-- Brand -->
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <img
-              class="dark-mobile-logo"
-              src="/img/vector/logo/friendkit.svg"
-              alt=""
-      />
-      <img
-              class="light-mobile-logo"
-              src="/img/vector/logo/friendkit-white.svg"
-              alt=""
-      />
+      <img class="dark-mobile-logo" src="/img/vector/logo/friendkit.svg" alt=""/>
+      <img class="light-mobile-logo" src="/img/vector/logo/friendkit-white.svg" alt=""/>
     </a>
 
     <!-- Mobile menu toggler icon -->
@@ -126,11 +115,7 @@
     <!-- Account -->
     <div class="navbar-item has-dropdown">
       <div class="navbar-link">
-        <img
-                src="https://via.placeholder.com/150x150"
-                data-demo-src="/img/avatars/avatar-w.png"
-                alt=""
-        />
+        <img src="https://via.placeholder.com/150x150" data-demo-src="/img/avatars/avatar-w.png" alt=""/>
         <span class="is-heading">Guest</span>
       </div>
 
@@ -138,23 +123,16 @@
       <div class="navbar-dropdown">
         <a href="#" class="navbar-item">Buy</a>
         <a href="#demos-section" class="navbar-item">Demos</a>
-        <a href="https://docs.friendkit.cssninja.io" class="navbar-item"
-        >Docs</a
-        >
+        <a href="https://docs.friendkit.cssninja.io" class="navbar-item">Docs</a>
         <a href="login.html" class="navbar-item">Login</a>
-        <a href="signup.html" class="button is-fullwidth is-solid accent-button"
-        >Sign Up</a
-        >
+        <a href="signup.html" class="button is-fullwidth is-solid accent-button">Sign Up</a>
       </div>
     </div>
   </div>
 </nav>
 
 <div class="landing-wrapper">
-  <div
-          id="friendkit-demo-landing"
-          class="hero is-fullheight landing-hero-wrapper"
-  >
+  <div id="friendkit-demo-landing" class="hero is-fullheight landing-hero-wrapper">
     <div id="particles-js"></div>
     <div class="hero-body">
       <div class="container is-desktop">
@@ -347,11 +325,7 @@
       <div class="columns is-vcentered">
         <div class="column is-6 is-hidden-mobile">
           <div class="screen-wrapper is-spaced has-plant">
-            <img
-                    class="plant plant-1"
-                    src="/img/illustrations/plants/1.svg"
-                    alt=""
-            />
+            <img class="plant plant-1" src="/img/illustrations/plants/1.svg" alt=""/>
             <img src="/img/screenshots/stories-main-large.png" alt="" />
           </div>
         </div>
@@ -365,11 +339,7 @@
         </div>
         <div class="column is-6 is-hidden-desktop">
           <div class="screen-wrapper is-spaced has-plant">
-            <img
-                    class="plant plant-1"
-                    src="/img/illustrations/plants/1.svg"
-                    alt=""
-            />
+            <img class="plant plant-1" src="/img/illustrations/plants/1.svg" alt=""/>
             <img src="/img/screenshots/stories-main-large.png" alt="" />
           </div>
         </div>
@@ -390,11 +360,7 @@
         </div>
         <div class="column is-6">
           <div class="screen-wrapper is-spaced has-plant">
-            <img
-                    class="plant plant-2"
-                    src="/img/illustrations/plants/2.svg"
-                    alt=""
-            />
+            <img class="plant plant-2" src="/img/illustrations/plants/2.svg" alt=""/>
             <img src="/img/screenshots/profile-main-large.png" alt="" />
           </div>
         </div>
@@ -407,11 +373,7 @@
       <div class="columns is-vcentered">
         <div class="column is-6 is-hidden-mobile">
           <div class="screen-wrapper is-spaced has-plant">
-            <img
-                    class="plant plant-1"
-                    src="/img/illustrations/plants/1.svg"
-                    alt=""
-            />
+            <img class="plant plant-1" src="/img/illustrations/plants/1.svg" alt=""/>
             <img src="/img/screenshots/signup-large.png" alt="" />
           </div>
         </div>
@@ -425,11 +387,7 @@
         </div>
         <div class="column is-6 is-hidden-desktop">
           <div class="screen-wrapper is-spaced has-plant">
-            <img
-                    class="plant plant-1"
-                    src="/img/illustrations/plants/1.svg"
-                    alt=""
-            />
+            <img class="plant plant-1" src="/img/illustrations/plants/1.svg" alt=""/>
             <img src="/img/screenshots/signup-large.png" alt="" />
           </div>
         </div>
@@ -461,11 +419,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -482,11 +436,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -503,11 +453,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed2.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed2.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -524,11 +470,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed2-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed2-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -545,11 +487,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed-posts-double.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed-posts-double.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -566,11 +504,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed-posts-double-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed-posts-double-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -587,11 +521,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed-posts-triple.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed-posts-triple.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -608,11 +538,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed-posts-triple-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed-posts-triple-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -629,11 +555,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed-profile.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed-profile.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -650,11 +572,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed-profile-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed-profile-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -671,11 +589,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed-slider.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed-slider.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -692,11 +606,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/feed-slider-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/feed-slider-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -713,11 +623,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/stories-main.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/stories-main.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -734,11 +640,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/stories-main-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/stories-main-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -755,11 +657,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/stories-story.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/stories-story.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -776,11 +674,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/stories-story-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/stories-story-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -798,11 +692,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/navbar-v1-groups.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/navbar-v1-groups.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -820,11 +710,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/navbar-v1-groups-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/navbar-v1-groups-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -841,11 +727,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/profile-minimal.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/profile-minimal.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -862,11 +744,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/profile-minimal-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/profile-minimal-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -883,11 +761,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/profile-main.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/profile-main.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -904,11 +778,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/profile-main-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/profile-main-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -925,11 +795,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/profile-about.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/profile-about.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -946,11 +812,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/profile-about-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/profile-about-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -967,11 +829,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/profile-friends.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/profile-friends.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -988,11 +846,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/profile-friends-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/profile-friends-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -1009,11 +863,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/profile-photos.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/profile-photos.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3502,11 +3352,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-stories-main.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-stories-main.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3524,11 +3370,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-stories-main-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-stories-main-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3546,11 +3388,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-stories-story.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-stories-story.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3568,11 +3406,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-stories-story-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-stories-story-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3590,11 +3424,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-groups.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-groups.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3612,11 +3442,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-groups-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-groups-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3634,11 +3460,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-profile-main.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-profile-main.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3656,11 +3478,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-profile-main-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-profile-main-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3678,11 +3496,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-profile-about.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-profile-about.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3700,11 +3514,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-profile-about-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-profile-about-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3722,11 +3532,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-profile-friends.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-profile-friends.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3744,11 +3550,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-profile-friends-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-profile-friends-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3766,11 +3568,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-profile-photos.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-profile-photos.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3788,11 +3586,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-profile-photos-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-profile-photos-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3810,11 +3604,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-profile-minimal.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-profile-minimal.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3832,11 +3622,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-profile-minimal-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-profile-minimal-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3854,11 +3640,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-ecommerce-products.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-ecommerce-products.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3876,11 +3658,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-ecommerce-products-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-ecommerce-products-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3898,11 +3676,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-ecommerce-cart.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-ecommerce-cart.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3920,11 +3694,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-ecommerce-cart-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-ecommerce-cart-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3942,11 +3712,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-ecommerce-checkout.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-ecommerce-checkout.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3964,11 +3730,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-ecommerce-checkout-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-ecommerce-checkout-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -3986,11 +3748,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-ecommerce-payment.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-ecommerce-payment.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4008,11 +3766,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-ecommerce-payment-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-ecommerce-payment-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4030,11 +3784,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-pages-main.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-pages-main.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4052,11 +3802,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-pages-main-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-pages-main-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4074,11 +3820,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-pages-about.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-pages-about.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4118,11 +3860,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-pages-community.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-pages-community.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4140,11 +3878,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-pages-community-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-pages-community-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4162,11 +3896,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-pages-photos.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-pages-photos.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4184,11 +3914,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-pages-photos-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-pages-photos-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4206,11 +3932,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-videos-home.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-videos-home.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4228,11 +3950,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-videos-home-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-videos-home-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4250,11 +3968,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-videos-home-v2.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-videos-home-v2.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4272,11 +3986,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-videos-home-v2-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-videos-home-v2-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4294,11 +4004,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-videos-player.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-videos-player.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4316,11 +4022,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-videos-player-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-videos-player-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4338,11 +4040,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-map-1.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-map-1.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4360,11 +4058,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-map-1-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-map-1-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4382,11 +4076,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-settings-v1.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-settings-v1.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4404,11 +4094,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-settings-v1-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-settings-v1-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4426,11 +4112,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-empty-placeholder.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-empty-placeholder.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4448,11 +4130,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-empty-placeholder-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-empty-placeholder-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4470,11 +4148,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-alert-placeholder.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-alert-placeholder.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4492,11 +4166,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/sidebar-v1-alert-placeholder-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/sidebar-v1-alert-placeholder-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4528,11 +4198,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/dashboard-home.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/dashboard-home.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4550,11 +4216,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/dashboard-home-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/dashboard-home-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4572,11 +4234,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/dashboard-posts.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/dashboard-posts.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4594,11 +4252,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/dashboard-posts-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/dashboard-posts-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4616,11 +4270,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/dashboard-videos.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/dashboard-videos.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4638,11 +4288,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/dashboard-videos-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/dashboard-videos-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4673,11 +4319,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/messages-inbox.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/messages-inbox.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4694,11 +4336,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/messages-inbox-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/messages-inbox-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4715,11 +4353,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/messages-chat.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/messages-chat.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4736,11 +4370,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/messages-chat-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/messages-chat-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4757,11 +4387,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/login.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/login.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4778,11 +4404,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/login-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/login-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4799,11 +4421,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/login2.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/login2.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4820,11 +4438,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/login2-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/login2-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4842,11 +4456,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/login-boxed.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/login-boxed.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4864,11 +4474,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/login-boxed-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/login-boxed-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4885,11 +4491,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/signup.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/signup.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4906,19 +4508,13 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/signup-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/signup-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
                     <div class="demo-title">Signup v1</div>
                     <div class="demo-link" data-theme="dark">
-                      <a class="is-dm" href="/signup.html"
-                      >Go to demo <i data-feather="chevron-right"></i
-                      ></a>
+                      <a class="is-dm" href="/signup.html">Go to demo <i data-feather="chevron-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -4928,11 +4524,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/signup-v2.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/signup-v2.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4950,11 +4542,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/signup-v2-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/signup-v2-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4971,11 +4559,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/elements.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/elements.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -4993,11 +4577,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/error-404.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/error-404.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -5015,11 +4595,7 @@
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
                 <span class="new-tag">New</span>
-                <img
-                        data-src="/img/screenshots/error-404-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/error-404-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -5036,11 +4612,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/elements-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/elements-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -5070,11 +4642,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/placeholders-feed.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/placeholders-feed.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -5091,19 +4659,13 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/placeholders-feed-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/placeholders-feed-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
                     <div class="demo-title">Placeholders v1</div>
                     <div class="demo-link" data-theme="dark">
-                      <a class="is-dm" href="/navbar-v1-placeholders-feed.html"
-                      >Go to demo <i data-feather="chevron-right"></i
-                      ></a>
+                      <a class="is-dm" href="/navbar-v1-placeholders-feed.html">Go to demo <i data-feather="chevron-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -5112,11 +4674,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/placeholders-questions-1.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/placeholders-questions-1.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -5133,11 +4691,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/placeholders-questions-1-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/placeholders-questions-1-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -5154,11 +4708,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/placeholders-questions-2.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/placeholders-questions-2.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -5175,19 +4725,13 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/placeholders-questions-2-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/placeholders-questions-2-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
                     <div class="demo-title">Placeholders v3</div>
                     <div class="demo-link" data-theme="dark">
-                      <a class="is-dm" href="/navbar-v1-placeholders-questions-2.html"
-                      >Go to demo <i data-feather="chevron-right"></i
-                      ></a>
+                      <a class="is-dm" href="/navbar-v1-placeholders-questions-2.html">Go to demo <i data-feather="chevron-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -5196,11 +4740,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/placeholders-questions-3.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/placeholders-questions-3.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -5217,11 +4757,7 @@
             <!-- Demo item -->
             <div class="column is-4 has-text-centered">
               <figure class="demo-wrapper">
-                <img
-                        data-src="/img/screenshots/placeholders-questions-3-dark.png"
-                        alt=""
-                        data-lazy-load
-                />
+                <img data-src="/img/screenshots/placeholders-questions-3-dark.png" alt="" data-lazy-load/>
                 <div class="circle-overlay"></div>
                 <div class="demo-info has-text-centered">
                   <div class="wrapper">
@@ -5249,20 +4785,12 @@
       </div>
       <div class="cta-title">
         <h3>Exclusively on Envato Market</h3>
-        <a
-                href="https://1.envato.market/c/1288816/275988/4415?subId1=shop&subId2=banner&subId3=https%3A%2F%2Fthemeforest.net%2Fitem%2Ffriendkit-social-media-ui-kit%2F24621825&u=https%3A%2F%2Fthemeforest.net%2Fitem%2Ffriendkit-social-media-ui-kit%2F24621825"
-                target="_blank"
-                class="custom-button is-single-reveal"
-        >
+        <a href="https://1.envato.market/c/1288816/275988/4415?subId1=shop&subId2=banner&subId3=https%3A%2F%2Fthemeforest.net%2Fitem%2Ffriendkit-social-media-ui-kit%2F24621825&u=https%3A%2F%2Fthemeforest.net%2Fitem%2Ffriendkit-social-media-ui-kit%2F24621825" target="_blank" class="custom-button is-single-reveal">
           <img src="/img/icons/explore/envato.svg" alt="" />
           <span>Get It Now</span>
         </a>
       </div>
-      <img
-              class="people-img"
-              src="/img/illustrations/characters/friends2.svg"
-              alt=""
-      />
+      <img class="people-img" src="/img/illustrations/characters/friends2.svg" alt=""/>
     </div>
   </div>
 
@@ -5275,12 +4803,7 @@
         </div>
         <div class="head-action">
           <div class="buttons">
-            <a
-                    href="https://1.envato.market/c/1288816/275988/4415?subId1=shop&subId2=banner&subId3=https%3A%2F%2Fthemeforest.net%2Fitem%2Ffriendkit-social-media-ui-kit%2F24621825&u=https%3A%2F%2Fthemeforest.net%2Fitem%2Ffriendkit-social-media-ui-kit%2F24621825"
-                    target="_blank"
-                    class="button is-solid primary-button raised action-button"
-            >Buy Now</a
-            >
+            <a href="https://1.envato.market/c/1288816/275988/4415?subId1=shop&subId2=banner&subId3=https%3A%2F%2Fthemeforest.net%2Fitem%2Ffriendkit-social-media-ui-kit%2F24621825&u=https%3A%2F%2Fthemeforest.net%2Fitem%2Ffriendkit-social-media-ui-kit%2F24621825" target="_blank" class="button is-solid primary-button raised action-button">Buy Now</a>
             <a class="button chat-button">Chat with us</a>
           </div>
         </div>
@@ -5289,21 +4812,14 @@
         <!-- Column -->
         <div class="column is-4">
           <div class="pt-10 pb-10">
-            <img
-                    class="small-footer-logo"
-                    src="/img/vector/logo/friendkit-bold.svg"
-                    alt=""
-            />
+            <img class="small-footer-logo" src="/img/vector/logo/friendkit-bold.svg" alt=""/>
             <div class="footer-description">
               Friendkit is built for developers and designers. Everything is there
               to kickstart your next webapp UI.
             </div>
           </div>
           <div>
-          <span class="moto"
-          >Designed and coded with <i data-feather="heart"></i> by CSS
-            Ninja.</span
-          >
+          <span class="moto">Designed and coded with <i data-feather="heart"></i> by CSSNinja.</span>
             <div class="social-links">
               <a href="#">
                 <span class="icon"><i data-feather="facebook"></i></span>
@@ -5375,6 +4891,7 @@
 
 <!-- Core js -->
 <script src="/js/global.js"></script>
+<script src="/js/common.js"></script>
 
 <!-- Navigation options js -->
 <script src="/js/navigation/navbar-v1.js"></script>

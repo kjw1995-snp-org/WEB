@@ -1,11 +1,18 @@
 package com.snp.web.configuration.web;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.AsyncHandlerInterceptor;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
+@RequiredArgsConstructor
 public class WebConfiguration implements WebMvcConfigurer {
+
+    private final AsyncHandlerInterceptor logInterceptor;
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -30,6 +37,13 @@ public class WebConfiguration implements WebMvcConfigurer {
                 .setCachePeriod(60 * 60 * 24 * 365);
         registry.addResourceHandler("/docs/**")
                 .addResourceLocations("classpath:/static/docs/");
+
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+
+        registry.addInterceptor(logInterceptor).addPathPatterns("/**");
 
     }
 
