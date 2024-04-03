@@ -13,8 +13,6 @@ public class ProfileServiceImpl implements ProfileService{
     private SenderUtils senderUtils;
 
     @Override
-    public String getPage(HttpServletRequest request) {
-        return null;
-    }
+    public String getPage() { return "확인"; }
 
 }

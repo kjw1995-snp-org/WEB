@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface ProfileService {
 
-    String getPage(HttpServletRequest request);
+    String getPage();
 
 
 }
