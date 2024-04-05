@@ -1,4 +1,4 @@
-package com.snp.web.controller;
+package com.snp.web.controller.feed;
 
 import com.snp.web.global.GlobalUrl;
 import org.springframework.stereotype.Controller;

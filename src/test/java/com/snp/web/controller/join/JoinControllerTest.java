@@ -1,7 +1,6 @@
-package com.snp.web.join;
+package com.snp.web.controller.join;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.snp.web.controller.join.JoinController;
 import com.snp.web.dto.join.request.JoinRequestDto;
 import com.snp.web.global.GlobalUrl;
 import org.junit.jupiter.api.DisplayName;

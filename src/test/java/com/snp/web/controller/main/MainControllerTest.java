@@ -1,4 +1,4 @@
-package com.snp.web.main;
+package com.snp.web.controller.main;
 
 import com.snp.web.controller.main.MainController;
 import com.snp.web.global.GlobalUrl;

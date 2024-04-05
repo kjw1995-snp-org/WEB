@@ -38,5 +38,4 @@ public class JoinController {
     @ResponseBody
     public ApiResponseDto joinProgress(@RequestBody JoinRequestDto requestDto) { return joinService.joinProgress(requestDto); }
 
-
 }

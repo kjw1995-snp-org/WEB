@@ -1,4 +1,4 @@
-package com.snp.web.login;
+package com.snp.web.controller.login;
 
 import com.snp.web.controller.login.LoginController;
 import org.junit.jupiter.api.Test;
