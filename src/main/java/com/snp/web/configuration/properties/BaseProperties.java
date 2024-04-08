@@ -1,5 +1,6 @@
 package com.snp.web.configuration.properties;
 
+import com.snp.web.configuration.properties.base.BaseFeedService;
 import com.snp.web.configuration.properties.base.BaseUserService;
 import com.snp.web.configuration.properties.factory.YamlPropertySourceFactory;
 import lombok.Data;
@@ -18,5 +19,7 @@ import org.springframework.context.annotation.PropertySource;
 public class BaseProperties {
 
     private BaseUserService userService;
+
+    private BaseFeedService feedService;
 
 }

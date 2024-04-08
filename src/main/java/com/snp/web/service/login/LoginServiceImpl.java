@@ -2,7 +2,6 @@ package com.snp.web.service.login;
 
 import com.snp.web.common.url.UserServiceUrl;
 import com.snp.web.configuration.properties.BaseProperties;
-import com.snp.web.dto.api.request.ApiRequestDto;
 import com.snp.web.dto.api.response.ApiResponseDto;
 import com.snp.web.dto.login.request.LoginRequestDto;
 import com.snp.web.dto.login.response.LoginResponseDto;
@@ -31,7 +30,7 @@ public class LoginServiceImpl implements LoginService {
     private SessionUtils sessionUtils;
 
     @Override
-    public ApiResponseDto<LoginResponseDto> login(ApiRequestDto<LoginRequestDto> loginRequestDto) {
+    public ApiResponseDto<LoginResponseDto> login(LoginRequestDto loginRequestDto) {
 
         log.info("Login Request = {}", loginRequestDto);
 

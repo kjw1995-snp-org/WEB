@@ -160,10 +160,10 @@
           method: 'POST',
           contentType: 'application/json',
           dataType: 'json',
-          data: JSON.stringify({ data }),
+          data: JSON.stringify(data),
           success: function(result) {
             if(result.status == 'SUC') {
-              localStorage.setItem('jwt',result.jwt_token);
+              localStorage.setItem('jwt',result.data.jwt_token);
               location.href = mainUrl;
             } else {
               alert(result.message);

@@ -47,11 +47,22 @@ public class SenderUtils {
      */
     private <T> T retrieve(WebClient webClient, String host, String uri, HttpMethod method, MediaType contentType, MediaType acceptType, Object data, ParameterizedTypeReference<T> responseClass) {
 
-        WebClient.RequestHeadersSpec<?> req = webClient.method(method)
-                .uri(host + uri)
-                .contentType(contentType)
-                .accept(acceptType)
-                .bodyValue(data == null ? "" : data);
+        WebClient.RequestHeadersSpec<?> req = null;
+
+        if(acceptType == null ) {
+             req = webClient.method(method)
+                            .uri(host + uri)
+                            .contentType(contentType)
+                            .bodyValue(data == null ? "" : data);
+        }
+
+        if(acceptType != null) {
+            req = webClient.method(method)
+                           .uri(host + uri)
+                           .contentType(contentType)
+                           .accept(acceptType)
+                           .bodyValue(data == null ? "" : data);
+        }
 
         Mono<T> mono = req.retrieve().bodyToMono(responseClass);
 

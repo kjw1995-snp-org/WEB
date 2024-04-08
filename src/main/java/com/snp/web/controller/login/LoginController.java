@@ -1,6 +1,5 @@
 package com.snp.web.controller.login;
 
-import com.snp.web.dto.api.request.ApiRequestDto;
 import com.snp.web.dto.api.response.ApiResponseDto;
 import com.snp.web.dto.login.request.LoginRequestDto;
 import com.snp.web.dto.login.response.LoginResponseDto;
@@ -58,6 +57,6 @@ public class LoginController {
      */
     @PostMapping(GlobalUrl.LOGIN_ACTION)
     @ResponseBody
-    public ApiResponseDto<LoginResponseDto> login(@RequestBody ApiRequestDto<LoginRequestDto> loginRequestDto) { return loginService.login(loginRequestDto); }
+    public ApiResponseDto<LoginResponseDto> login(@RequestBody LoginRequestDto loginRequestDto) { return loginService.login(loginRequestDto); }
 
 }

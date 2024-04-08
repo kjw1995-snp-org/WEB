@@ -1,3 +1,5 @@
 base:
   userService:
     host: "http://localhost:7999"
+  feedService:
+    host: "http://localhost:7999"

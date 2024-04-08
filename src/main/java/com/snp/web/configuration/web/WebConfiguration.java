@@ -1,7 +1,10 @@
 package com.snp.web.configuration.web;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.servlets.DefaultServlet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.AsyncHandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -45,6 +48,27 @@ public class WebConfiguration implements WebMvcConfigurer {
 
         registry.addInterceptor(logInterceptor).addPathPatterns("/**");
 
+    }
+
+    /**
+     * 정적리소스 는 DefaultServlet 에게 위임한다.
+     * @return {@link ServletRegistrationBean}
+     * @author kimjungwoo
+     */
+    @Bean
+    public ServletRegistrationBean<DefaultServlet> defaultServlet() {
+        return new ServletRegistrationBean<DefaultServlet>(
+                new DefaultServlet(),
+                "/css/**",
+                "/js/**",
+                "/img/**",
+                "/assets/img/**",
+                "/font/**",
+                "/fonts/**",
+                "/data/**",
+                "/assets/data/**",
+                "/docs/**"
+        );
     }
 
 }
