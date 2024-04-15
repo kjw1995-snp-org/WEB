@@ -20,7 +20,14 @@ public class FeedController {
     private FeedService feedService;
 
     @GetMapping(GlobalUrl.FEED_URI)
-    public ModelAndView feed() { return new ModelAndView("feed/feed"); }
+    public ModelAndView feed() {
+
+        ModelAndView mav = new ModelAndView("feed/feed");
+        List<FeedResponseDto> feeds = feedService.feeds().getData();
+        mav.addObject("feeds", feeds);
+
+        return mav;
+    }
 
     @PostMapping(GlobalUrl.FEED_URI)
     @ResponseBody
