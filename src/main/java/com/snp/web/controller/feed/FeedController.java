@@ -1,7 +1,7 @@
 package com.snp.web.controller.feed;
 
 import com.snp.web.dto.api.response.ApiResponseDto;
-import com.snp.web.dto.feed.response.FeedResponseDto;
+import com.snp.web.dto.feed.inquiry.response.FeedInquiryResponseDto;
 import com.snp.web.global.GlobalUrl;
 import com.snp.web.service.feed.FeedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class FeedController {
     public ModelAndView feed() {
 
         ModelAndView mav = new ModelAndView("feed/feed");
-        List<FeedResponseDto> feeds = feedService.feeds().getData();
+        List<FeedInquiryResponseDto> feeds = feedService.feeds().getData();
         mav.addObject("feeds", feeds);
 
         return mav;
@@ -31,6 +31,6 @@ public class FeedController {
 
     @PostMapping(GlobalUrl.FEED_URI)
     @ResponseBody
-    public ApiResponseDto<List<FeedResponseDto>> feeds() { return feedService.feeds(); }
+    public ApiResponseDto<List<FeedInquiryResponseDto>> feeds() { return feedService.feeds(); }
 
 }

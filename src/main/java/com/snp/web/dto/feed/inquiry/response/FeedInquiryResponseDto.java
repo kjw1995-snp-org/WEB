@@ -1,4 +1,4 @@
-package com.snp.web.dto.feed.response;
+package com.snp.web.dto.feed.inquiry.response;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
@@ -14,15 +14,17 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class FeedResponseDto {
+public class FeedInquiryResponseDto {
 
     private Integer id;
 
     private Integer memberIdx;
 
-    private String title;
-
     private String content;
+
+    private String memberId;
+
+    private String memberName;
 
     private LocalDateTime registDate;
 

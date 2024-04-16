@@ -3,7 +3,7 @@ package com.snp.web.service.feed;
 import com.snp.web.common.url.FeedServiceUrl;
 import com.snp.web.configuration.properties.BaseProperties;
 import com.snp.web.dto.api.response.ApiResponseDto;
-import com.snp.web.dto.feed.response.FeedResponseDto;
+import com.snp.web.dto.feed.inquiry.response.FeedInquiryResponseDto;
 import com.snp.web.util.SenderUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -23,7 +23,7 @@ public class FeedServiceImpl implements FeedService {
     private SenderUtils senderUtils;
 
     @Override
-    public ApiResponseDto<List<FeedResponseDto>> feeds() {
+    public ApiResponseDto<List<FeedInquiryResponseDto>> feeds() {
         return senderUtils.send
                 (
                         baseProperties.getFeedService().getHost(),
@@ -32,7 +32,7 @@ public class FeedServiceImpl implements FeedService {
                         MediaType.APPLICATION_JSON,
                         null,
                         null,
-                        new ParameterizedTypeReference<ApiResponseDto<List<FeedResponseDto>>>() {}
+                        new ParameterizedTypeReference<ApiResponseDto<List<FeedInquiryResponseDto>>>() {}
                 );
     }
 }

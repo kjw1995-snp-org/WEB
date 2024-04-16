@@ -9,39 +9,11 @@
   <title>피드</title>
   <link rel="icon" type="image/png" href="/img/favicon.png" />
 
-  <script src="/js/googleTabManager.js"></script>
-
+  <script src="/js/googleTagManager.js"></script>
   <script src="/js/app.js"></script>
   <script src="/js/global.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
-
-  <!-- Core instance js -->
-  <script src="/js/main.js"></script>
-  <script src="/js/pages/chat.js"></script>
-  <script src="/js/touch.js"></script>
-  <script src="/js/tour.js"></script>
-
-  <!-- Navigation options js -->
-  <script src="/js/navigation/navbar-v1.js"></script>
-  <script src="/js/navigation/navbar-v2.js"></script>
-  <script src="/js/navigation/navbar-mobile.js"></script>
-  <script src="/js/navigation/navbar-options.js"></script>
-  <script src="/js/navigation/sidebar-v1.js"></script>
-
-  <!-- Components js -->
-  <script src="/js/pages/explorer.js"></script>
-  <script src="/js/components/widgets.js"></script>
-  <script src="/js/components/modal-uploader.js"></script>
-  <script src="/js/components/popovers-users.js"></script>
-  <script src="/js/components/popovers-pages.js"></script>
-  <script src="/js/components/lightbox.js"></script>
-  <script src="/js/pages/feed.js"></script>
-  <script src="/js/components/webcam.js"></script>
-  <script src="/js/components/compose.js"></script>
-  <script src="/js/components/autocompletes.js"></script>
-
-  <!-- Google places Lib -->
-  <script src="https://maps.google.com/maps/api/js?key=AIzaSyAGLO_M5VT7BsVdjMjciKoH1fFJWWdhDPU&libraries=places"></script>
+  <script th:src="@{/js/feed/feed.js}"></script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800,900" rel="stylesheet"/>
@@ -71,529 +43,479 @@
         <img class="logo dark-image" src="/img/vector/logo/friendkit-white.svg" width="112" height="28" alt=""/>
       </a>
     </div>
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        <!-- Navbar Search -->
+    <th:block th:if="${sessionInfo != null}">
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <!-- Navbar Search -->
 
-        <div class="navbar-item is-icon drop-trigger">
-          <a class="icon-link is-friends" href="javascript:void(0);">
-            <i data-feather="heart"></i>
-            <span class="indicator"></span>
-          </a>
+          <div class="navbar-item is-icon drop-trigger">
+            <a class="icon-link is-friends" href="javascript:void(0);">
+              <i data-feather="heart"></i>
+              <span class="indicator"></span>
+            </a>
 
-          <div class="nav-drop">
-            <div class="inner">
-              <div class="nav-drop-header">
-                <span>Friend requests</span>
-                <a href="#">
-                  <i data-feather="search"></i>
-                </a>
-              </div>
-              <div class="nav-drop-body is-friend-requests">
-                <!-- Friend request -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/bobby.jpg" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <a href="#">Bobby Brown</a>
-                    <span>Najeel verwick is a common friend</span>
-                  </div>
-                  <div class="media-right">
-                    <button class="button icon-button is-solid grey-button raised">
-                      <i data-feather="user-plus"></i>
-                    </button>
-                    <button class="button icon-button is-solid grey-button raised">
-                      <i data-feather="user-minus"></i>
-                    </button>
-                  </div>
+            <div class="nav-drop">
+              <div class="inner">
+                <div class="nav-drop-header">
+                  <span>Friend requests</span>
+                  <a href="#">
+                    <i data-feather="search"></i>
+                  </a>
                 </div>
-                <!-- Friend request -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/dan.jpg" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <a href="#">Dan Walker</a>
-                    <span>You have 4 common friends</span>
-                  </div>
-                  <div class="media-right">
-                    <button class="button icon-button is-solid grey-button raised">
-                      <i data-feather="user-plus"></i>
-                    </button>
-                    <button class="button icon-button is-solid grey-button raised">
-                      <i data-feather="user-minus"></i>
-                    </button>
-                  </div>
-                </div>
-                <!-- Friend request -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/nelly.png" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <span>You are now friends with <a href="#">Nelly Schwartz</a>. Checkher <a href="#">profile</a>.</span>
-                  </div>
-                  <div class="media-right">
-                    <div class="added-icon">
-                      <i data-feather="tag"></i>
-                    </div>
-                  </div>
-                </div>
-                <!-- Friend request -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/milly.jpg" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <a href="#">Milly Augustine</a>
-                    <span>You have 8 common friends</span>
-                  </div>
-                  <div class="media-right">
-                    <button class="button icon-button is-solid grey-button raised">
-                      <i data-feather="user-plus"></i>
-                    </button>
-                    <button class="button icon-button is-solid grey-button raised">
-                      <i data-feather="user-minus"></i>
-                    </button>
-                  </div>
-                </div>
-                <!-- Friend request -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/elise.jpg" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <span>You are now friends with <a href="#">Elise Walker</a>. Check her<a href="#">profile</a>.</span>
-                  </div>
-                  <div class="media-right">
-                    <div class="added-icon">
-                      <i data-feather="tag"></i>
-                    </div>
-                  </div>
-                </div>
-                <!-- Friend request -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/edward.jpeg" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <span>You are now friends with <a href="#">Edward Mayers</a>. Check his<a href="#">profile</a>.</span>
-                  </div>
-                  <div class="media-right">
-                    <div class="added-icon">
-                      <i data-feather="tag"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="nav-drop-footer">
-                <a href="#">View All</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="navbar-item is-icon drop-trigger">
-          <a class="icon-link" href="javascript:void(0);">
-            <i data-feather="bell"></i>
-            <span class="indicator"></span>
-          </a>
-
-          <div class="nav-drop">
-            <div class="inner">
-              <div class="nav-drop-header">
-                <span>Notifications</span>
-                <a href="#">
-                  <i data-feather="bell"></i>
-                </a>
-              </div>
-              <div class="nav-drop-body is-notifications">
-                <!-- Notification -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/david.jpg" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <span><a href="#">David Kim</a> commented on<a href="#">your post</a>.</span>
-                    <span class="time">30 minutes ago</span>
-                  </div>
-                  <div class="media-right">
-                    <div class="added-icon">
-                      <i data-feather="message-square"></i>
-                    </div>
-                  </div>
-                </div>
-                <!-- Notification -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/daniel.jpg" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <span><a href="#">Daniel Wellington</a> liked your<a href="#">profile.</a></span>
-                    <span class="time">43 minutes ago</span>
-                  </div>
-                  <div class="media-right">
-                    <div class="added-icon">
-                      <i data-feather="heart"></i>
-                    </div>
-                  </div>
-                </div>
-                <!-- Notification -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/stella.jpg" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <span>
-                      <a href="#">Stella Bergmann</a> shared a<a href="#">New video</a> on your wall.
-                    </span>
-                    <span class="time">Yesterday</span>
-                  </div>
-                  <div class="media-right">
-                    <div class="added-icon">
-                      <i data-feather="youtube"></i>
-                    </div>
-                  </div>
-                </div>
-                <!-- Notification -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/elise.jpg" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <span><a href="#">Elise Walker</a> shared an <a href="#">Image</a> withyou an 2 other people.</span>
-                    <span class="time">2 days ago</span>
-                  </div>
-                  <div class="media-right">
-                    <div class="added-icon">
-                      <i data-feather="image"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="nav-drop-footer">
-                <a href="#">View All</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="navbar-item is-icon drop-trigger">
-          <a class="icon-link" href="javascript:void(0);">
-            <i data-feather="mail"></i>
-            <span class="indicator"></span>
-          </a>
-
-          <div class="nav-drop">
-            <div class="inner">
-              <div class="nav-drop-header">
-                <span>Messages</span>
-                <a href="messages-inbox.html">Inbox</a>
-              </div>
-              <div class="nav-drop-body is-friend-requests">
-                <!-- Message -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/150x150" data-demo-src="/img/avatars/nelly.png" data-user-popover="9" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <a href="#">Nelly Schwartz</a>
-                    <span>I think we should meet near the Starbucks so we can get...</span>
-                    <span class="time">Yesterday</span>
-                  </div>
-                  <div class="media-right is-centered">
-                    <div class="added-icon">
-                      <i data-feather="message-square"></i>
-                    </div>
-                  </div>
-                </div>
-                <!-- Message -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/150x150" data-demo-src="/img/avatars/edward.jpeg" data-user-popover="5" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <a href="#">Edward Mayers</a>
-                    <span>That was a real pleasure seeing you last time we reallyshould...</span>
-                    <span class="time">last week</span>
-                  </div>
-                  <div class="media-right is-centered">
-                    <div class="added-icon">
-                      <i data-feather="message-square"></i>
-                    </div>
-                  </div>
-                </div>
-                <!-- Message -->
-                <div class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/dan.jpg" data-user-popover="1" alt=""/>
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <a href="#">Dan Walker</a>
-                    <span>Hey there, would it be possible to borrow your bicycle, i reallyneed...</span>
-                    <span class="time">Jun 03 2018</span>
-                  </div>
-                  <div class="media-right is-centered">
-                    <div class="added-icon">
-                      <i data-feather="message-square"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="nav-drop-footer">
-                <a href="#">Clear All</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="navbar-item is-icon open-chat">
-          <a class="icon-link is-primary" href="javascript:void(0);">
-            <i data-feather="message-square"></i>
-            <span class="indicator"></span>
-          </a>
-        </div>
-
-        <div id="explorer-trigger" class="navbar-item is-icon">
-          <a class="icon-link is-primary">
-            <i class="mdi mdi-apps"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div id="global-search" class="control">
-            <input id="tipue_drop_input" class="input is-rounded" type="text" placeholder="Search" required/>
-            <span id="clear-search" class="reset-search">
-              <i data-feather="x"></i>
-            </span>
-            <span class="search-icon">
-              <i data-feather="search"></i>
-            </span>
-            <div id="tipue_drop_content" class="tipue-drop-content"></div>
-          </div>
-        </div>
-
-        <div class="navbar-item is-cart">
-          <div class="cart-button">
-            <i data-feather="shopping-cart"></i>
-            <div class="cart-count"></div>
-          </div>
-
-          <!-- Cart dropdown -->
-          <div class="shopping-cart">
-            <div class="cart-inner">
-              <!--Loader-->
-              <div class="navbar-cart-loader is-active">
-                <div class="loader is-loading"></div>
-              </div>
-
-              <div class="shopping-cart-header">
-                <a href="/ecommerce-cart.html" class="cart-link">View Cart</a>
-                <div class="shopping-cart-total">
-                  <span class="lighter-text">Total:</span>
-                  <span class="main-color-text">$193.00</span>
-                </div>
-              </div>
-              <!--end shopping-cart-header -->
-
-              <ul class="shopping-cart-items">
-                <li class="cart-row">
-                  <img src="/img/products/2.svg" alt="" />
-                  <span class="item-meta">
-                    <span class="item-name">Cool Shirt</span>
-                    <span class="meta-info">
-                      <span class="item-price">$29.00</span>
-                      <span class="item-quantity">Qty: 01</span>
-                    </span>
-                  </span>
-                </li>
-
-                <li class="cart-row">
-                  <img src="/img/products/3.svg" alt="" />
-                  <span class="item-meta">
-                    <span class="item-name">Military Short</span>
-                    <span class="meta-info">
-                      <span class="item-price">$39.00</span>
-                      <span class="item-quantity">Qty: 01</span>
-                    </span>
-                  </span>
-                </li>
-
-                <li class="cart-row">
-                  <img src="/img/products/4.svg" alt="" />
-                  <span class="item-meta">
-                    <span class="item-name">Cool Backpack</span>
-                    <span class="meta-info">
-                      <span class="item-price">$125.00</span>
-                      <span class="item-quantity">Qty: 01</span>
-                    </span>
-                  </span>
-                </li>
-              </ul>
-
-              <a href="#" class="button primary-button is-raised">Checkout</a>
-            </div>
-          </div>
-        </div>
-
-        <div id="account-dropdown" class="navbar-item is-account drop-trigger has-caret">
-          <div class="user-image">
-            <img src="https://via.placeholder.com/400x400" data-demo-src="/img/avatars/jenna.png" alt=""/>
-            <span class="indicator"></span>
-          </div>
-
-          <div class="nav-drop is-account-dropdown">
-            <div class="inner">
-              <div class="nav-drop-header">
-                <span class="username">Jenna Davis</span>
-                <label class="theme-toggle">
-                  <input type="checkbox" />
-                  <span class="toggler">
-                    <span class="dark">
-                      <i data-feather="moon"></i>
-                    </span>
-                    <span class="light">
-                      <i data-feather="sun"></i>
-                    </span>
-                  </span>
-                </label>
-              </div>
-              <div class="nav-drop-body account-items">
-                <a id="profile-link" th:href="${urls.PROFILE_URI}" class="account-item">
+                <div class="nav-drop-body is-friend-requests">
+                  <!-- Friend request -->
                   <div class="media">
-                    <div class="media-left">
-                      <div class="image">
-                        <img src="https://via.placeholder.com/400x400" data-demo-src="/img/avatars/jenna.png" alt=""/>
-                      </div>
-                    </div>
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/bobby.jpg" alt=""/>
+                      </p>
+                    </figure>
                     <div class="media-content">
-                      <h3>Jenna Davis</h3>
-                      <small>Main account</small>
+                      <a href="#">Bobby Brown</a>
+                      <span>Najeel verwick is a common friend</span>
                     </div>
                     <div class="media-right">
-                      <i data-feather="check"></i>
+                      <button class="button icon-button is-solid grey-button raised">
+                        <i data-feather="user-plus"></i>
+                      </button>
+                      <button class="button icon-button is-solid grey-button raised">
+                        <i data-feather="user-minus"></i>
+                      </button>
                     </div>
                   </div>
-                </a>
-                <hr class="account-divider" />
-                <a href="/navbar-v1-pages-main.html" class="account-item">
+                  <!-- Friend request -->
                   <div class="media">
-                    <div class="media-left">
-                      <div class="image">
-                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/hanzo.svg" alt=""/>
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/dan.jpg" alt=""/>
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <a href="#">Dan Walker</a>
+                      <span>You have 4 common friends</span>
+                    </div>
+                    <div class="media-right">
+                      <button class="button icon-button is-solid grey-button raised">
+                        <i data-feather="user-plus"></i>
+                      </button>
+                      <button class="button icon-button is-solid grey-button raised">
+                        <i data-feather="user-minus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Friend request -->
+                  <div class="media">
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/nelly.png" alt=""/>
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <span>You are now friends with <a href="#">Nelly Schwartz</a>. Checkher <a href="#">profile</a>.</span>
+                    </div>
+                    <div class="media-right">
+                      <div class="added-icon">
+                        <i data-feather="tag"></i>
                       </div>
                     </div>
+                  </div>
+                  <!-- Friend request -->
+                  <div class="media">
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/milly.jpg" alt=""/>
+                      </p>
+                    </figure>
                     <div class="media-content">
-                      <h3>Css Ninja</h3>
-                      <small>Company page</small>
+                      <a href="#">Milly Augustine</a>
+                      <span>You have 8 common friends</span>
                     </div>
-                    <div class="media-right is-hidden">
-                      <i data-feather="check"></i>
+                    <div class="media-right">
+                      <button class="button icon-button is-solid grey-button raised">
+                        <i data-feather="user-plus"></i>
+                      </button>
+                      <button class="button icon-button is-solid grey-button raised">
+                        <i data-feather="user-minus"></i>
+                      </button>
                     </div>
                   </div>
-                </a>
-                <a href="/navbar-v1-pages-main.html" class="account-item">
+                  <!-- Friend request -->
                   <div class="media">
-                    <div class="media-left">
-                      <div class="image">
-                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/vector/icons/logos/fastpizza.svg" alt=""/>
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/elise.jpg" alt=""/>
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <span>You are now friends with <a href="#">Elise Walker</a>. Check her<a href="#">profile</a>.</span>
+                    </div>
+                    <div class="media-right">
+                      <div class="added-icon">
+                        <i data-feather="tag"></i>
                       </div>
                     </div>
-                    <div class="media-content">
-                      <h3>Fast Pizza</h3>
-                      <small>Company page</small>
-                    </div>
-                    <div class="media-right is-hidden">
-                      <i data-feather="check"></i>
-                    </div>
                   </div>
-                </a>
-                <a href="/navbar-v1-pages-main.html" class="account-item">
+                  <!-- Friend request -->
                   <div class="media">
-                    <div class="media-left">
-                      <div class="image">
-                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/vector/icons/logos/slicer.svg" alt=""/>
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/edward.jpeg" alt=""/>
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <span>You are now friends with <a href="#">Edward Mayers</a>. Check his<a href="#">profile</a>.</span>
+                    </div>
+                    <div class="media-right">
+                      <div class="added-icon">
+                        <i data-feather="tag"></i>
                       </div>
                     </div>
-                    <div class="media-content">
-                      <h3>Slicer</h3>
-                      <small>Company page</small>
-                    </div>
-                    <div class="media-right is-hidden">
-                      <i data-feather="check"></i>
-                    </div>
                   </div>
-                </a>
-                <hr class="account-divider" />
-                <a href="/options-settings.html" class="account-item">
+                </div>
+                <div class="nav-drop-footer">
+                  <a href="#">View All</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-item is-icon drop-trigger">
+            <a class="icon-link" href="javascript:void(0);">
+              <i data-feather="bell"></i>
+              <span class="indicator"></span>
+            </a>
+
+            <div class="nav-drop">
+              <div class="inner">
+                <div class="nav-drop-header">
+                  <span>Notifications</span>
+                  <a href="#">
+                    <i data-feather="bell"></i>
+                  </a>
+                </div>
+                <div class="nav-drop-body is-notifications">
+                  <!-- Notification -->
                   <div class="media">
-                    <div class="icon-wrap">
-                      <i data-feather="settings"></i>
-                    </div>
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/david.jpg" alt=""/>
+                      </p>
+                    </figure>
                     <div class="media-content">
-                      <h3>Settings</h3>
-                      <small>Access widget settings.</small>
+                      <span><a href="#">David Kim</a> commented on<a href="#">your post</a>.</span>
+                      <span class="time">30 minutes ago</span>
+                    </div>
+                    <div class="media-right">
+                      <div class="added-icon">
+                        <i data-feather="message-square"></i>
+                      </div>
                     </div>
                   </div>
-                </a>
-                <a class="account-item">
+                  <!-- Notification -->
                   <div class="media">
-                    <div class="icon-wrap">
-                      <i data-feather="life-buoy"></i>
-                    </div>
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/daniel.jpg" alt=""/>
+                      </p>
+                    </figure>
                     <div class="media-content">
-                      <h3>Help</h3>
-                      <small>Contact our support.</small>
+                      <span><a href="#">Daniel Wellington</a> liked your<a href="#">profile.</a></span>
+                      <span class="time">43 minutes ago</span>
+                    </div>
+                    <div class="media-right">
+                      <div class="added-icon">
+                        <i data-feather="heart"></i>
+                      </div>
                     </div>
                   </div>
-                </a>
-                <a class="account-item">
+                  <!-- Notification -->
                   <div class="media">
-                    <div class="icon-wrap">
-                      <i data-feather="power"></i>
-                    </div>
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/stella.jpg" alt=""/>
+                      </p>
+                    </figure>
                     <div class="media-content">
-                      <h3>Log out</h3>
-                      <small>Log out from your account.</small>
+                      <span>
+                        <a href="#">Stella Bergmann</a> shared a<a href="#">New video</a> on your wall.
+                      </span>
+                      <span class="time">Yesterday</span>
+                    </div>
+                    <div class="media-right">
+                      <div class="added-icon">
+                        <i data-feather="youtube"></i>
+                      </div>
                     </div>
                   </div>
-                </a>
+                  <!-- Notification -->
+                  <div class="media">
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/elise.jpg" alt=""/>
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <span><a href="#">Elise Walker</a> shared an <a href="#">Image</a> withyou an 2 other people.</span>
+                      <span class="time">2 days ago</span>
+                    </div>
+                    <div class="media-right">
+                      <div class="added-icon">
+                        <i data-feather="image"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="nav-drop-footer">
+                  <a href="#">View All</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-item is-icon drop-trigger">
+            <a class="icon-link" href="javascript:void(0);">
+              <i data-feather="mail"></i>
+              <span class="indicator"></span>
+            </a>
+
+            <div class="nav-drop">
+              <div class="inner">
+                <div class="nav-drop-header">
+                  <span>Messages</span>
+                  <a href="messages-inbox.html">Inbox</a>
+                </div>
+                <div class="nav-drop-body is-friend-requests">
+                  <!-- Message -->
+                  <div class="media">
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/150x150" data-demo-src="/img/avatars/nelly.png" data-user-popover="9" alt=""/>
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <a href="#">Nelly Schwartz</a>
+                      <span>I think we should meet near the Starbucks so we can get...</span>
+                      <span class="time">Yesterday</span>
+                    </div>
+                    <div class="media-right is-centered">
+                      <div class="added-icon">
+                        <i data-feather="message-square"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Message -->
+                  <div class="media">
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/150x150" data-demo-src="/img/avatars/edward.jpeg" data-user-popover="5" alt=""/>
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <a href="#">Edward Mayers</a>
+                      <span>That was a real pleasure seeing you last time we reallyshould...</span>
+                      <span class="time">last week</span>
+                    </div>
+                    <div class="media-right is-centered">
+                      <div class="added-icon">
+                        <i data-feather="message-square"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Message -->
+                  <div class="media">
+                    <figure class="media-left">
+                      <p class="image">
+                        <img src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/dan.jpg" data-user-popover="1" alt=""/>
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <a href="#">Dan Walker</a>
+                      <span>Hey there, would it be possible to borrow your bicycle, i reallyneed...</span>
+                      <span class="time">Jun 03 2018</span>
+                    </div>
+                    <div class="media-right is-centered">
+                      <div class="added-icon">
+                        <i data-feather="message-square"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="nav-drop-footer">
+                  <a href="#">Clear All</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-item is-icon open-chat">
+            <a class="icon-link is-primary" href="javascript:void(0);">
+              <i data-feather="message-square"></i>
+              <span class="indicator"></span>
+            </a>
+          </div>
+
+          <div id="explorer-trigger" class="navbar-item is-icon">
+            <a class="icon-link is-primary">
+              <i class="mdi mdi-apps"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div id="global-search" class="control">
+              <input id="tipue_drop_input" class="input is-rounded" type="text" placeholder="Search" required/>
+              <span id="clear-search" class="reset-search">
+                <i data-feather="x"></i>
+              </span>
+              <span class="search-icon">
+                <i data-feather="search"></i>
+              </span>
+              <div id="tipue_drop_content" class="tipue-drop-content"></div>
+            </div>
+          </div>
+
+          <div class="navbar-item is-cart">
+            <div class="cart-button">
+              <i data-feather="shopping-cart"></i>
+              <div class="cart-count"></div>
+            </div>
+
+            <!-- Cart dropdown -->
+            <div class="shopping-cart">
+              <div class="cart-inner">
+                <!--Loader-->
+                <div class="navbar-cart-loader is-active">
+                  <div class="loader is-loading"></div>
+                </div>
+
+                <div class="shopping-cart-header">
+                  <a href="/ecommerce-cart.html" class="cart-link">View Cart</a>
+                  <div class="shopping-cart-total">
+                    <span class="lighter-text">Total:</span>
+                    <span class="main-color-text">$193.00</span>
+                  </div>
+                </div>
+                <!--end shopping-cart-header -->
+
+                <ul class="shopping-cart-items">
+                  <li class="cart-row">
+                    <img src="/img/products/2.svg" alt="" />
+                    <span class="item-meta">
+                      <span class="item-name">Cool Shirt</span>
+                      <span class="meta-info">
+                        <span class="item-price">$29.00</span>
+                        <span class="item-quantity">Qty: 01</span>
+                      </span>
+                    </span>
+                  </li>
+
+                  <li class="cart-row">
+                    <img src="/img/products/3.svg" alt="" />
+                    <span class="item-meta">
+                      <span class="item-name">Military Short</span>
+                      <span class="meta-info">
+                        <span class="item-price">$39.00</span>
+                        <span class="item-quantity">Qty: 01</span>
+                      </span>
+                    </span>
+                  </li>
+
+                  <li class="cart-row">
+                    <img src="/img/products/4.svg" alt="" />
+                    <span class="item-meta">
+                      <span class="item-name">Cool Backpack</span>
+                      <span class="meta-info">
+                        <span class="item-price">$125.00</span>
+                        <span class="item-quantity">Qty: 01</span>
+                      </span>
+                    </span>
+                  </li>
+                </ul>
+
+                <a href="#" class="button primary-button is-raised">Checkout</a>
+              </div>
+            </div>
+          </div>
+
+          <div id="account-dropdown" class="navbar-item is-account drop-trigger has-caret">
+            <div class="user-image">
+              <img src="https://via.placeholder.com/400x400" data-demo-src="/img/avatars/jenna.png" alt=""/>
+              <span class="indicator"></span>
+            </div>
+
+            <div class="nav-drop is-account-dropdown">
+              <div class="inner">
+                <div class="nav-drop-header">
+                  <span class="username">[[${sessionInfo.memberModel.name}]]</span>
+                  <label class="theme-toggle">
+                    <input type="checkbox" />
+                    <span class="toggler">
+                      <span class="dark">
+                        <i data-feather="moon"></i>
+                      </span>
+                      <span class="light">
+                        <i data-feather="sun"></i>
+                      </span>
+                    </span>
+                  </label>
+                </div>
+                <div class="nav-drop-body account-items">
+                  <a id="profile-link" th:href="${urls.PROFILE_URI}" class="account-item">
+                    <div class="media">
+                      <div class="media-left">
+                        <div class="image">
+                          <img src="https://via.placeholder.com/400x400" data-demo-src="/img/avatars/jenna.png" alt=""/>
+                        </div>
+                      </div>
+                      <div class="media-content">
+                        <h3>[[${sessionInfo.memberModel.name}]]</h3>
+                        <small></small>
+                      </div>
+                      <div class="media-right">
+                        <i data-feather="check"></i>
+                      </div>
+                    </div>
+                  </a>
+                  <hr class="account-divider" />
+                  <a href="/options-settings.html" class="account-item">
+                    <div class="media">
+                      <div class="icon-wrap">
+                        <i data-feather="settings"></i>
+                      </div>
+                      <div class="media-content">
+                        <h3>설정</h3>
+                        <small>설정</small>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="account-item" th:href="${urls.LOGOUT_URI}">
+                    <div class="media">
+                      <div class="icon-wrap">
+                        <i data-feather="power"></i>
+                      </div>
+                      <div class="media-content">
+                        <h3>로그아웃</h3>
+                        <small></small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-    </div>
+    </th:block>
+    <th:block th:if="${sessionInfo == null}">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-login-btn" th:href="${urls.LOGIN_URI + '/v2'}">
+            로그인 v2
+          </a>
+        </div>
+      </div>
+    </th:block>
   </div>
 </div>
 
@@ -2072,656 +1994,6 @@
               </div>
             </th:block>
           </div>
-
-          <!-- Post 1 -->
-          <!-- /partials/pages/feed/posts/feed-post1.html -->
-          <!-- POST #1 -->
-          <th:block th:if="${feeds != null}">
-            <th:block th:each="feed : ${feeds}">
-              <div id="feed-post-1" class="card is-post">
-                <!-- Main wrap -->
-                <div class="content-wrap">
-                  <!-- Post header -->
-                  <div class="card-heading">
-                    <!-- User meta -->
-                    <div class="user-block">
-                      <div class="image">
-                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/dan.jpg" data-user-popover="1" alt=""/>
-                      </div>
-                      <div class="user-info">
-                        <a href="#">[[${feed.title}]]</a>
-                        <span class="time">[[${feed.registDate}]]</span>
-                      </div>
-                    </div>
-                    <!-- Right side dropdown -->
-                    <!-- /partials/pages/feed/dropdowns/feed-post-dropdown.html -->
-                    <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
-                      <div>
-                        <div class="button">
-                          <i data-feather="more-vertical"></i>
-                        </div>
-                      </div>
-                      <div class="dropdown-menu" role="menu">
-                        <div class="dropdown-content">
-                          <a href="#" class="dropdown-item">
-                            <div class="media">
-                              <i data-feather="bookmark"></i>
-                              <div class="media-content">
-                                <h3>Bookmark</h3>
-                                <small>Add this post to your bookmarks.</small>
-                              </div>
-                            </div>
-                          </a>
-                          <a class="dropdown-item">
-                            <div class="media">
-                              <i data-feather="bell"></i>
-                              <div class="media-content">
-                                <h3>Notify me</h3>
-                                <small>Send me the updates.</small>
-                              </div>
-                            </div>
-                          </a>
-                          <hr class="dropdown-divider" />
-                          <a href="#" class="dropdown-item">
-                            <div class="media">
-                              <i data-feather="flag"></i>
-                              <div class="media-content">
-                                <h3>Flag</h3>
-                                <small>In case of inappropriate content.</small>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <!-- /Post header -->
-
-                  <!-- Post body -->
-                  <div class="card-body">
-                    <!-- Post body text -->
-                    <div class="post-text">
-                      <p>
-                        Yesterday with <a href="#">@Karen Miller</a> and
-                        <a href="#">@Marvin Stemperd</a> at the
-                        <a href="#">#Rock'n'Rolla</a> concert in LA. Was totally fantastic!
-                        People were really excited about this one!
-                      </p>
-                    </div>
-                    <!-- Featured image -->
-                    <div class="post-image">
-                      <a data-fancybox="post1" data-lightbox-type="comments" data-thumb="/img/demo/unsplash/1.jpg" href="https://via.placeholder.com/1600x900" data-demo-href="/img/demo/unsplash/1.jpg">
-                        <img src="https://via.placeholder.com/1600x900" data-demo-src="/img/demo/unsplash/1.jpg" alt=""/>
-                      </a>
-                      <!-- Action buttons -->
-                      <!-- /partials/pages/feed/buttons/feed-post-actions.html -->
-                      <div class="like-wrapper">
-                        <a href="javascript:void(0);" class="like-button">
-                          <i class="mdi mdi-heart not-liked bouncy"></i>
-                          <i class="mdi mdi-heart is-liked bouncy"></i>
-                          <span class="like-overlay"></span>
-                        </a>
-                      </div>
-
-                      <div class="fab-wrapper is-share">
-                        <a href="javascript:void(0);" class="small-fab share-fab modal-trigger" data-modal="share-modal">
-                          <i data-feather="link-2"></i>
-                        </a>
-                      </div>
-
-                      <div class="fab-wrapper is-comment">
-                        <a href="javascript:void(0);" class="small-fab">
-                          <i data-feather="message-circle"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /Post body -->
-
-                  <!-- Post footer -->
-                  <div class="card-footer">
-                    <!-- Followers avatars -->
-                    <div class="likers-group">
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/dan.jpg" data-user-popover="1" alt=""/>
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/david.jpg" data-user-popover="4" alt=""/>
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/edward.jpeg" data-user-popover="5" alt=""/>
-                      <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/milly.jpg" data-user-popover="7" alt=""/>
-                    </div>
-                    <!-- Followers text -->
-                    <div class="likers-text">
-                      <p>
-                        <a href="#">Milly</a>,
-                        <a href="#">David</a>
-                      </p>
-                      <p>and 23 more liked this</p>
-                    </div>
-                    <!-- Post statistics -->
-                    <div class="social-count">
-                      <div class="likes-count">
-                        <i data-feather="heart"></i>
-                        <span>27</span>
-                      </div>
-                      <div class="shares-count">
-                        <i data-feather="link-2"></i>
-                        <span>9</span>
-                      </div>
-                      <div class="comments-count">
-                        <i data-feather="message-circle"></i>
-                        <span>3</span>
-                      </div>
-                    </div>
-                  </div> <!-- /Post footer -->
-                </div> <!-- /Main wrap -->
-
-                <!-- Post #1 Comments -->
-                <div class="comments-wrap is-hidden">
-                  <!-- Header -->
-                  <div class="comments-heading">
-                    <h4>Comments <small>(8)</small></h4>
-                    <div class="close-comments">
-                      <i data-feather="x"></i>
-                    </div>
-                  </div>
-                  <!-- /Header -->
-
-                  <!-- Comments body -->
-                  <div class="comments-body has-slimscroll">
-                    <!-- Comment -->
-                    <div class="media is-comment">
-                      <!-- User image -->
-                      <div class="media-left">
-                        <div class="image">
-                          <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/dan.jpg" data-user-popover="1" alt=""/>
-                        </div>
-                      </div>
-                      <!-- Content -->
-                      <div class="media-content">
-                        <a href="#">Dan Walker</a>
-                        <span class="time">28 minutes ago</span>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                          eiusmod tempo incididunt ut labore et dolore magna aliqua. Ut enim
-                          ad minim veniam, quis nostrud exercitation ullamco laboris
-                          consequat.
-                        </p>
-                        <!-- Actions -->
-                        <div class="controls">
-                          <div class="like-count">
-                            <i data-feather="thumbs-up"></i>
-                            <span>4</span>
-                          </div>
-                          <div class="reply">
-                            <a href="#">Reply</a>
-                          </div>
-                          <div class="edit">
-                            <a href="#">Edit</a>
-                          </div>
-                        </div>
-
-                        <!-- Nested Comment -->
-                        <div class="media is-comment">
-                          <!-- User image -->
-                          <div class="media-left">
-                            <div class="image">
-                              <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/david.jpg" data-user-popover="4" alt=""/>
-                            </div>
-                          </div>
-                          <!-- Content -->
-                          <div class="media-content">
-                            <a href="#">David Kim</a>
-                            <span class="time">15 minutes ago</span>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                              eiusmod tempo incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <!-- Actions -->
-                            <div class="controls">
-                              <div class="like-count">
-                                <i data-feather="thumbs-up"></i>
-                                <span>0</span>
-                              </div>
-                              <div class="reply">
-                                <a href="#">Reply</a>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- Right side dropdown -->
-                          <div class="media-right">
-                            <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
-                              <div>
-                                <div class="button">
-                                  <i data-feather="more-vertical"></i>
-                                </div>
-                              </div>
-                              <div class="dropdown-menu" role="menu">
-                                <div class="dropdown-content">
-                                  <a class="dropdown-item">
-                                    <div class="media">
-                                      <i data-feather="x"></i>
-                                      <div class="media-content">
-                                        <h3>Hide</h3>
-                                        <small>Hide this comment.</small>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <div class="dropdown-divider"></div>
-                                  <a href="#" class="dropdown-item">
-                                    <div class="media">
-                                      <i data-feather="flag"></i>
-                                      <div class="media-content">
-                                        <h3>Report</h3>
-                                        <small>Report this comment.</small>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /Nested Comment -->
-                      </div>
-                      <!-- Right side dropdown -->
-                      <div class="media-right">
-                        <!-- /partials/pages/feed/dropdowns/comment-dropdown.html -->
-                        <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
-                          <div>
-                            <div class="button">
-                              <i data-feather="more-vertical"></i>
-                            </div>
-                          </div>
-                          <div class="dropdown-menu" role="menu">
-                            <div class="dropdown-content">
-                              <a class="dropdown-item">
-                                <div class="media">
-                                  <i data-feather="x"></i>
-                                  <div class="media-content">
-                                    <h3>Hide</h3>
-                                    <small>Hide this comment.</small>
-                                  </div>
-                                </div>
-                              </a>
-                              <div class="dropdown-divider"></div>
-                              <a href="#" class="dropdown-item">
-                                <div class="media">
-                                  <i data-feather="flag"></i>
-                                  <div class="media-content">
-                                    <h3>Report</h3>
-                                    <small>Report this comment.</small>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /Comment -->
-
-                    <!-- Comment -->
-                    <div class="media is-comment">
-                      <!-- User image -->
-                      <div class="media-left">
-                        <div class="image">
-                          <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/rolf.jpg" data-user-popover="13" alt=""/>
-                        </div>
-                      </div>
-                      <!-- Content -->
-                      <div class="media-content">
-                        <a href="#">Rolf Krupp</a>
-                        <span class="time">9 hours ago</span>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                          eiusmod tempo incididunt ut labore et dolore magna aliqua.
-                          Exercitation ullamco laboris consequat.
-                        </p>
-                        <!-- Actions -->
-                        <div class="controls">
-                          <div class="like-count">
-                            <i data-feather="thumbs-up"></i>
-                            <span>2</span>
-                          </div>
-                          <div class="reply">
-                            <a href="#">Reply</a>
-                          </div>
-                        </div>
-
-                        <!-- Nested Comment -->
-                        <div class="media is-comment">
-                          <!-- User image -->
-                          <div class="media-left">
-                            <div class="image">
-                              <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/elise.jpg" data-user-popover="6" alt=""/>
-                            </div>
-                          </div>
-                          <!-- Content -->
-                          <div class="media-content">
-                            <a href="#">Elise Walker</a>
-                            <span class="time">8 hours ago</span>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                              eiusmod tempo incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <!-- Actions -->
-                            <div class="controls">
-                              <div class="like-count">
-                                <i data-feather="thumbs-up"></i>
-                                <span>0</span>
-                              </div>
-                              <div class="reply">
-                                <a href="#">Reply</a>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- Right side dropdown -->
-                          <div class="media-right">
-                            <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
-                              <div>
-                                <div class="button">
-                                  <i data-feather="more-vertical"></i>
-                                </div>
-                              </div>
-                              <div class="dropdown-menu" role="menu">
-                                <div class="dropdown-content">
-                                  <a class="dropdown-item">
-                                    <div class="media">
-                                      <i data-feather="x"></i>
-                                      <div class="media-content">
-                                        <h3>Hide</h3>
-                                        <small>Hide this comment.</small>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <div class="dropdown-divider"></div>
-                                  <a href="#" class="dropdown-item">
-                                    <div class="media">
-                                      <i data-feather="flag"></i>
-                                      <div class="media-content">
-                                        <h3>Report</h3>
-                                        <small>Report this comment.</small>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /Nested Comment -->
-
-                        <!-- Nested Comment -->
-                        <div class="media is-comment">
-                          <!-- User image -->
-                          <div class="media-left">
-                            <div class="image">
-                              <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/rolf.jpg" data-user-popover="13" alt=""/>
-                            </div>
-                          </div>
-                          <!-- Content -->
-                          <div class="media-content">
-                            <a href="#">Rolf Krupp</a>
-                            <span class="time">7 hours ago</span>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                              eiusmod tempo incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <!-- Actions -->
-                            <div class="controls">
-                              <div class="like-count">
-                                <i data-feather="thumbs-up"></i>
-                                <span>1</span>
-                              </div>
-                              <div class="reply">
-                                <a href="#">Reply</a>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- Right side dropdown -->
-                          <div class="media-right">
-                            <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
-                              <div>
-                                <div class="button">
-                                  <i data-feather="more-vertical"></i>
-                                </div>
-                              </div>
-                              <div class="dropdown-menu" role="menu">
-                                <div class="dropdown-content">
-                                  <a class="dropdown-item">
-                                    <div class="media">
-                                      <i data-feather="x"></i>
-                                      <div class="media-content">
-                                        <h3>Hide</h3>
-                                        <small>Hide this comment.</small>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <div class="dropdown-divider"></div>
-                                  <a href="#" class="dropdown-item">
-                                    <div class="media">
-                                      <i data-feather="flag"></i>
-                                      <div class="media-content">
-                                        <h3>Report</h3>
-                                        <small>Report this comment.</small>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /Nested Comment -->
-
-                        <!-- Nested Comment -->
-                        <div class="media is-comment">
-                          <!-- User image -->
-                          <div class="media-left">
-                            <div class="image">
-                              <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/elise.jpg" data-user-popover="6" alt=""/>
-                            </div>
-                          </div>
-                          <!-- Content -->
-                          <div class="media-content">
-                            <a href="#">Elise Walker</a>
-                            <span class="time">6 hours ago</span>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                              eiusmod tempo incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <!-- Actions -->
-                            <div class="controls">
-                              <div class="like-count">
-                                <i data-feather="thumbs-up"></i>
-                                <span>0</span>
-                              </div>
-                              <div class="reply">
-                                <a href="#">Reply</a>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- Right side dropdown -->
-                          <div class="media-right">
-                            <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
-                              <div>
-                                <div class="button">
-                                  <i data-feather="more-vertical"></i>
-                                </div>
-                              </div>
-                              <div class="dropdown-menu" role="menu">
-                                <div class="dropdown-content">
-                                  <a class="dropdown-item">
-                                    <div class="media">
-                                      <i data-feather="x"></i>
-                                      <div class="media-content">
-                                        <h3>Hide</h3>
-                                        <small>Hide this comment.</small>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <div class="dropdown-divider"></div>
-                                  <a href="#" class="dropdown-item">
-                                    <div class="media">
-                                      <i data-feather="flag"></i>
-                                      <div class="media-content">
-                                        <h3>Report</h3>
-                                        <small>Report this comment.</small>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- /Nested Comment -->
-                      </div>
-                      <!-- Right side dropdown -->
-                      <div class="media-right">
-                        <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
-                          <div>
-                            <div class="button">
-                              <i data-feather="more-vertical"></i>
-                            </div>
-                          </div>
-                          <div class="dropdown-menu" role="menu">
-                            <div class="dropdown-content">
-                              <a class="dropdown-item">
-                                <div class="media">
-                                  <i data-feather="x"></i>
-                                  <div class="media-content">
-                                    <h3>Hide</h3>
-                                    <small>Hide this comment.</small>
-                                  </div>
-                                </div>
-                              </a>
-                              <div class="dropdown-divider"></div>
-                              <a href="#" class="dropdown-item">
-                                <div class="media">
-                                  <i data-feather="flag"></i>
-                                  <div class="media-content">
-                                    <h3>Report</h3>
-                                    <small>Report this comment.</small>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /Comment -->
-
-                    <!-- Comment -->
-                    <div class="media is-comment">
-                      <!-- User image -->
-                      <div class="media-left">
-                        <div class="image">
-                          <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/lana.jpeg" data-user-popover="10" alt=""/>
-                        </div>
-                      </div>
-                      <!-- Content -->
-                      <div class="media-content">
-                        <a href="#">Lana Henrikssen</a>
-                        <span class="time">10 hours ago</span>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                          eiusmod tempo incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <!-- Comment actions -->
-                        <div class="controls">
-                          <div class="like-count">
-                            <i data-feather="thumbs-up"></i>
-                            <span>5</span>
-                          </div>
-                          <div class="reply">
-                            <a href="#">Reply</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Right side dropdown -->
-                      <div class="media-right">
-                        <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
-                          <div>
-                            <div class="button">
-                              <i data-feather="more-vertical"></i>
-                            </div>
-                          </div>
-                          <div class="dropdown-menu" role="menu">
-                            <div class="dropdown-content">
-                              <a class="dropdown-item">
-                                <div class="media">
-                                  <i data-feather="x"></i>
-                                  <div class="media-content">
-                                    <h3>Hide</h3>
-                                    <small>Hide this comment.</small>
-                                  </div>
-                                </div>
-                              </a>
-                              <div class="dropdown-divider"></div>
-                              <a href="#" class="dropdown-item">
-                                <div class="media">
-                                  <i data-feather="flag"></i>
-                                  <div class="media-content">
-                                    <h3>Report</h3>
-                                    <small>Report this comment.</small>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /Comment -->
-                  </div>
-                  <!-- /Comments body -->
-
-                  <!-- Comments footer -->
-                  <div class="card-footer">
-                    <div class="media post-comment has-emojis">
-                      <!-- Comment Textarea -->
-                      <div class="media-content">
-                        <div class="field">
-                          <p class="control">
-                            <textarea class="textarea comment-textarea" rows="5" placeholder="Write a comment..."></textarea>
-                          </p>
-                        </div>
-                        <!-- Additional actions -->
-                        <div class="actions">
-                          <div class="image is-32x32">
-                            <img class="is-rounded" src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/jenna.png" data-user-popover="0" alt=""/>
-                          </div>
-                          <div class="toolbar">
-                            <div class="action is-auto">
-                              <i data-feather="at-sign"></i>
-                            </div>
-                            <div class="action is-emoji">
-                              <i data-feather="smile"></i>
-                            </div>
-                            <div class="action is-upload">
-                              <i data-feather="camera"></i>
-                              <input type="file" />
-                            </div>
-                            <a class="button is-solid primary-button raised">Post Comment</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Comments footer -->
-                </div>
-                <!-- /Post #1 Comments -->
-              </div>
-            </th:block>
-          </th:block>
-          <!-- POST #1 -->
-
-          <!-- Load more posts -->
-          <div class="load-more-wrap narrow-top has-text-centered">
-            <a href="#" class="load-more-button">Load More</a>
-          </div>
-          <!-- /Load more posts -->
         </div>
         <!-- /Middle column -->
 
@@ -6224,7 +5496,33 @@
   </div>
 </div>
 
-<script th:src="@{/js/feed/feed.js}"></script>
+<!-- Core instance js -->
+<script src="/js/main.js"></script>
+<script src="/js/pages/chat.js"></script>
+<script src="/js/touch.js"></script>
+<script src="/js/tour.js"></script>
+
+<!-- Navigation options js -->
+<script src="/js/navigation/navbar-v1.js"></script>
+<script src="/js/navigation/navbar-v2.js"></script>
+<script src="/js/navigation/navbar-mobile.js"></script>
+<script src="/js/navigation/navbar-options.js"></script>
+<script src="/js/navigation/sidebar-v1.js"></script>
+
+<!-- Components js -->
+<script src="/js/pages/explorer.js"></script>
+<script src="/js/components/widgets.js"></script>
+<script src="/js/components/modal-uploader.js"></script>
+<script src="/js/components/popovers-users.js"></script>
+<script src="/js/components/popovers-pages.js"></script>
+<script src="/js/components/lightbox.js"></script>
+<script src="/js/pages/feed.js"></script>
+<script src="/js/components/webcam.js"></script>
+<script src="/js/components/compose.js"></script>
+<script src="/js/components/autocompletes.js"></script>
+
+<!-- Google places Lib -->
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyAGLO_M5VT7BsVdjMjciKoH1fFJWWdhDPU&libraries=places"></script>
 
 </body>
 </html>

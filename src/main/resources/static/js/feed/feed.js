@@ -2,36 +2,17 @@ const feedUrl = /*[[${urls.FEED_URI}]]*/ "";
 let postStr = '';
 let dateString = null;
 
-$(document).ready(function(){
-
-    $.ajax({
-        url: feedUrl,
-        method: 'POST',
-        contentType: 'application/json',
-        success: function(response) {
-            renderFeedList(response, dateString);
-        },
-        error: function (err) {
-            alert('피드 리스트 조회 실패');
-        }
-    });
-
-
+$.ajax({
+    url: feedUrl,
+    method: 'POST',
+    contentType: 'application/json',
+    success: function(response) {
+        renderFeedList(response, dateString);
+    },
+    error: function (err) {
+        alert('피드 리스트 조회 실패');
+    }
 });
-
-function formatDate(dateStr) {
-
-    let date = new Date(dateStr);
-    let year = date.getFullYear();
-    let month = ('0' + (date.getMonth() + 1)).slice(-2);
-    let day = ('0' + date.getDate()).slice(-2);
-    let hours = ('0' + date.getHours()).slice(-2);
-    let minutes = ('0' + date.getMinutes()).slice(-2);
-    let seconds = ('0' + date.getSeconds()).slice(-2);
-
-    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-
-}
 
 function renderFeedList(response, dateString) {
 
@@ -40,23 +21,18 @@ function renderFeedList(response, dateString) {
 
         postStr += `
                     <div class="card is-post">
-                      <!-- Main wrap -->
                       <div class="content-wrap">
-                        <!-- Post header -->
                         <div class="card-heading">
-                          <!-- User meta -->
                           <div class="user-block">
                             <div class="image">
                               <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/edward.jpeg" data-user-popover="5" alt=""/>
                             </div>
                             <div class="user-info">
-                              <a href="#">${response.data[i].title}</a>
+                              <a href="#">${response.data[i].member_id}</a>
                               <span class="time">${dateString.toLocaleDateString()}</span>
                             </div>
                           </div>
                     
-                          <!-- Right side dropdown -->
-                          <!-- /partials/pages/feed/dropdowns/feed-post-dropdown.html -->
                           <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
                             <div>
                               <div class="button">
@@ -96,26 +72,18 @@ function renderFeedList(response, dateString) {
                               </div>
                             </div>
                           </div>
-                          <!-- Right side dropdown -->
                     
                         </div>
-                        <!-- /Post header -->
                     
-                        <!-- Post body -->
                         <div class="card-body">
-                          <!-- Post body text -->
                           <div class="post-text">
                             <p>
-                              You all know how i love bootstrap, but i didn't have time to dig
-                              deeper into it. Therefore i found this very interesting video i wanted
-                              to share with you all. <a href="#">#bootsrap #webdesign</a>
+                              ${response.data[i].content}
                             </p>
                     
                             <p></p>
                           </div>
-                          <!-- Featured youtube video -->
                           <div class="post-link is-video">
-                            <!-- Link image -->
                             <div class="link-image">
                               <img src="https://via.placeholder.com/300x300" data-demo-src="/img/demo/video/bootstrap.jpg" alt=""/>
                               <div class="video-overlay"></div>
@@ -123,7 +91,6 @@ function renderFeedList(response, dateString) {
                                 <img src="/img/icons/video/play.svg" alt="" />
                               </a>
                             </div>
-                            <!-- Link content -->
                             <div class="link-content">
                               <h4>
                                 <a href="#">What's new in Bootstrap 4 ?</a>
@@ -135,8 +102,6 @@ function renderFeedList(response, dateString) {
                               <small>Youtube.com</small>
                             </div>
                     
-                            <!-- Post actions -->
-                            <!-- /partials/pages/feed/buttons/feed-post-actions.html -->
                             <div class="like-wrapper">
                               <a href="javascript:void(0);" class="like-button">
                                 <i class="mdi mdi-heart not-liked bouncy"></i>
@@ -156,15 +121,10 @@ function renderFeedList(response, dateString) {
                                 <i data-feather="message-circle"></i>
                               </a>
                             </div>
-                            <!-- Post actions -->
-                    
                           </div>
                         </div>
-                        <!-- /Post body -->
                     
-                        <!-- Post footer -->
                         <div class="card-footer">
-                          <!-- Followers -->
                           <div class="likers-group">
                             <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/daniel.jpg" data-user-popover="3" alt=""/>
                             <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/elise.jpg" data-user-popover="6" alt=""/>
@@ -176,7 +136,6 @@ function renderFeedList(response, dateString) {
                             </p>
                             <p>liked this</p>
                           </div>
-                          <!-- Post statistics -->
                           <div class="social-count">
                             <div class="likes-count">
                               <i data-feather="heart"></i>
@@ -192,32 +151,23 @@ function renderFeedList(response, dateString) {
                             </div>
                           </div>
                         </div>
-                        <!-- /Post footer -->
                       </div>
-                      <!-- /Main wrap -->
                     
-                      <!-- Post #2 comments -->
                       <div class="comments-wrap is-hidden">
-                        <!-- Header -->
                         <div class="comments-heading">
                           <h4>Comments <small>(2)</small></h4>
                           <div class="close-comments">
                             <i data-feather="x"></i>
                           </div>
                         </div>
-                        <!-- /Header -->
                     
-                        <!-- Comments body -->
                         <div class="comments-body has-slimscroll">
-                          <!-- Comment -->
                           <div class="media is-comment">
-                            <!-- User image -->
                             <div class="media-left">
                               <div class="image">
                                 <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/elise.jpg" data-user-popover="6" alt=""/>
                               </div>
                             </div>
-                            <!-- Content -->
                             <div class="media-content">
                               <a href="#">Elise Walker</a>
                               <span class="time">2 days ago</span>
@@ -227,7 +177,6 @@ function renderFeedList(response, dateString) {
                                 ad minim veniam, quis nostrud exercitation ullamco laboris
                                 consequat.
                               </p>
-                              <!-- Comment actions -->
                               <div class="controls">
                                 <div class="like-count">
                                   <i data-feather="thumbs-up"></i>
@@ -238,15 +187,12 @@ function renderFeedList(response, dateString) {
                                 </div>
                               </div>
                     
-                              <!-- Nested Comment -->
                               <div class="media is-comment">
-                                <!-- User image -->
                                 <div class="media-left">
                                   <div class="image">
                                     <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/daniel.jpg" data-user-popover="3" alt=""/>
                                   </div>
                                 </div>
-                                <!-- Content -->
                                 <div class="media-content">
                                   <a href="#">Daniel Wellington</a>
                                   <span class="time">2 days ago</span>
@@ -254,7 +200,6 @@ function renderFeedList(response, dateString) {
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                                     eiusmod tempo incididunt ut labore et dolore magna aliqua.
                                   </p>
-                                  <!-- Comment actions -->
                                   <div class="controls">
                                     <div class="like-count">
                                       <i data-feather="thumbs-up"></i>
@@ -266,7 +211,6 @@ function renderFeedList(response, dateString) {
                                   </div>
                                 </div>
                     
-                                <!-- Right side dropdown -->
                                 <div class="media-right">
                                   <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
                                     <div>
@@ -299,15 +243,10 @@ function renderFeedList(response, dateString) {
                                     </div>
                                   </div>
                                 </div>
-                                <!-- Right side dropdown -->
-                    
                               </div>
-                              <!-- /Nested Comment -->
                             </div>
                     
-                            <!-- Right side dropdown -->
                             <div class="media-right">
-                              <!-- /partials/pages/feed/dropdowns/comment-dropdown.html -->
                               <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
                                 <div>
                                   <div class="button">
@@ -339,18 +278,12 @@ function renderFeedList(response, dateString) {
                                 </div>
                               </div>
                             </div>
-                            <!-- Right side dropdown -->
                     
                           </div>
-                          <!-- /Comment -->
                         </div>
-                        <!-- /Comments body -->
                     
-                        <!-- Comments footer -->
                         <div class="card-footer">
-                          <!-- User image -->
                           <div class="media post-comment has-emojis">
-                            <!-- Textarea -->
                             <div class="media-content">
                               <div class="field">
                                 <p class="control">
@@ -361,7 +294,6 @@ function renderFeedList(response, dateString) {
                                   ></textarea>
                                 </p>
                               </div>
-                              <!-- Additional actions -->
                               <div class="actions">
                                 <div class="image is-32x32">
                                   <img class="is-rounded" src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/jenna.png" data-user-popover="0" alt=""/>
@@ -383,14 +315,33 @@ function renderFeedList(response, dateString) {
                             </div>
                           </div>
                         </div>
-                        <!-- /Comments footer -->
                       </div>
-                      <!-- /Post #2 comments -->
                     </div>`;
 
     }
 
+    postStr += `
+                <div class="load-more-wrap narrow-top has-text-centered">
+                    <a href="#" class="load-more-button">Load More</a>
+                </div>
+               `;
+                
+
     $('.column.is-6').append(postStr);
+
+}
+
+function formatDate(dateStr) {
+
+    let date = new Date(dateStr);
+    let year = date.getFullYear();
+    let month = ('0' + (date.getMonth() + 1)).slice(-2);
+    let day = ('0' + date.getDate()).slice(-2);
+    let hours = ('0' + date.getHours()).slice(-2);
+    let minutes = ('0' + date.getMinutes()).slice(-2);
+    let seconds = ('0' + date.getSeconds()).slice(-2);
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
 }
 
