@@ -1537,7 +1537,7 @@
                       <div class="compose-form">
                         <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/jenna.png" alt=""/>
                         <div class="control">
-                          <textarea id="publish" class="textarea" rows="3" placeholder="내용을 입력해주세요."></textarea>
+                          <textarea id="publish" class="textarea feed-content" rows="3" placeholder="내용을 입력해주세요."></textarea>
                         </div>
                       </div>
 
@@ -1986,7 +1986,7 @@
                         <span>View More</span>
                       </button>
                       <!-- Publish button -->
-                      <button id="publish-button" type="button" class="button is-solid accent-button is-fullwidth is-disabled">
+                      <button id="publish-button" type="button" class="button is-solid accent-button is-fullwidth is-disabled feed-publish-btn">
                         Publish
                       </button>
                     </div>
@@ -3041,12 +3041,7 @@
                   <div class="media is-comment">
                     <figure class="media-left">
                       <p class="image is-32x32">
-                        <img
-                                src="https://via.placeholder.com/300x300"
-                                data-demo-src="/img/avatars/david.jpg"
-                                alt=""
-                                data-user-popover="4"
-                        />
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/david.jpg" alt="" data-user-popover="4"/>
                       </p>
                     </figure>
                     <div class="media-content">
@@ -3062,12 +3057,7 @@
                   <div class="media is-comment">
                     <figure class="media-left">
                       <p class="image is-32x32">
-                        <img
-                                src="https://via.placeholder.com/300x300"
-                                data-demo-src="/img/avatars/rolf.jpg"
-                                alt=""
-                                data-user-popover="17"
-                        />
+                        <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/rolf.jpg" alt="" data-user-popover="17"/>
                       </p>
                     </figure>
                     <div class="media-content">
@@ -3088,16 +3078,9 @@
 
               <div class="comment-controls">
                 <div class="controls-inner">
-                  <img
-                          src="https://via.placeholder.com/300x300"
-                          data-demo-src="/img/avatars/jenna.png"
-                          alt=""
-                  />
+                  <img src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/jenna.png" alt=""/>
                   <div class="control">
-                  <textarea
-                          class="textarea comment-textarea is-rounded"
-                          rows="1"
-                  ></textarea>
+                  <textarea class="textarea comment-textarea is-rounded" rows="1"></textarea>
                     <button class="emoji-button">
                       <i data-feather="smile"></i>
                     </button>
@@ -3187,49 +3170,26 @@
         </div>
         <div class="share-inputs">
           <div class="field is-autocomplete">
-            <div
-                    id="share-to-friend"
-                    class="control share-channel-control is-hidden"
-            >
-              <input
-                      id="share-with-friend"
-                      type="text"
-                      class="input is-sm no-radius share-input simple-users-autocpl"
-                      placeholder="Your friend's name"
-              />
+            <div id="share-to-friend" class="control share-channel-control is-hidden">
+              <input id="share-with-friend" type="text" class="input is-sm no-radius share-input simple-users-autocpl" placeholder="Your friend's name"/>
               <div class="input-heading">Friend :</div>
             </div>
           </div>
 
           <div class="field is-autocomplete">
-            <div
-                    id="share-to-group"
-                    class="control share-channel-control is-hidden"
-            >
-              <input
-                      id="share-with-group"
-                      type="text"
-                      class="input is-sm no-radius share-input simple-groups-autocpl"
-                      placeholder="Your group's name"
-              />
+            <div id="share-to-group" class="control share-channel-control is-hidden">
+              <input id="share-with-group" type="text" class="input is-sm no-radius share-input simple-groups-autocpl" placeholder="Your group's name"/>
               <div class="input-heading">Group :</div>
             </div>
           </div>
 
-          <div
-                  id="share-to-page"
-                  class="control share-channel-control no-border is-hidden"
-          >
+          <div id="share-to-page" class="control share-channel-control no-border is-hidden">
             <div class="page-controls">
               <div class="page-selection">
                 <div class="dropdown is-accent page-dropdown">
                   <div>
                     <div class="button page-selector">
-                      <img
-                              src="https://via.placeholder.com/150x150"
-                              data-demo-src="/img/avatars/hanzo.svg"
-                              alt=""
-                      />
+                      <img src="https://via.placeholder.com/150x150" data-demo-src="/img/avatars/hanzo.svg" alt=""/>
                       <span>Css Ninja</span> <i data-feather="chevron-down"></i>
                     </div>
                   </div>
@@ -3237,11 +3197,7 @@
                     <div class="dropdown-content">
                       <div class="dropdown-item">
                         <div class="media">
-                          <img
-                                  src="https://via.placeholder.com/150x150"
-                                  data-demo-src="/img/avatars/hanzo.svg"
-                                  alt=""
-                          />
+                          <img src="https://via.placeholder.com/150x150" data-demo-src="/img/avatars/hanzo.svg" alt=""/>
                           <div class="media-content">
                             <h3>Css Ninja</h3>
                             <small>Share on Css Ninja.</small>
@@ -3251,11 +3207,7 @@
 
                       <div class="dropdown-item">
                         <div class="media">
-                          <img
-                                  src="https://via.placeholder.com/150x150"
-                                  data-demo-src="/img/vector/icons/logos/nuclearjs.svg"
-                                  alt=""
-                          />
+                          <img src="https://via.placeholder.com/150x150" data-demo-src="/img/vector/icons/logos/nuclearjs.svg" alt=""/>
                           <div class="media-content">
                             <h3>NuclearJs</h3>
                             <small>Share on NuclearJs.</small>
@@ -3265,11 +3217,7 @@
 
                       <div class="dropdown-item">
                         <div class="media">
-                          <img
-                                  src="https://via.placeholder.com/150x150"
-                                  data-demo-src="/img/vector/icons/logos/slicer.svg"
-                                  alt=""
-                          />
+                          <img src="https://via.placeholder.com/150x150" data-demo-src="/img/vector/icons/logos/slicer.svg" alt=""/>
                           <div class="media-content">
                             <h3>Slicer</h3>
                             <small>Share on Slicer.</small>
@@ -3282,59 +3230,32 @@
               </div>
 
               <div class="alias">
-                <img
-                        src="https://via.placeholder.com/150x150"
-                        data-demo-src="/img/avatars/jenna.png"
-                        alt=""
-                />
+                <img src="https://via.placeholder.com/150x150" data-demo-src="/img/avatars/jenna.png" alt=""/>
               </div>
             </div>
           </div>
 
           <div class="field is-autocomplete">
-            <div
-                    id="share-to-private-message"
-                    class="control share-channel-control is-hidden"
-            >
-              <input
-                      id="share-with-private-message"
-                      type="text"
-                      class="input is-sm no-radius share-input simple-users-autocpl"
-                      placeholder="Message a friend"
-              />
+            <div id="share-to-private-message" class="control share-channel-control is-hidden">
+              <input id="share-with-private-message" type="text" class="input is-sm no-radius share-input simple-users-autocpl" placeholder="Message a friend"/>
               <div class="input-heading">To :</div>
             </div>
           </div>
         </div>
         <div class="card-body">
           <div class="control">
-          <textarea
-                  class="textarea comment-textarea"
-                  rows="1"
-                  placeholder="Say something about this ..."
-          ></textarea>
+          <textarea class="textarea comment-textarea" rows="1" placeholder="Say something about this ..."></textarea>
             <button class="emoji-button">
               <i data-feather="smile"></i>
             </button>
           </div>
           <div class="shared-publication">
             <div class="featured-image">
-              <img
-                      id="share-modal-image"
-                      src="https://via.placeholder.com/1600x900"
-                      data-demo-src="/img/demo/unsplash/1.jpg"
-                      alt=""
-              />
+              <img id="share-modal-image" src="https://via.placeholder.com/1600x900" data-demo-src="/img/demo/unsplash/1.jpg" alt=""/>
             </div>
             <div class="publication-meta">
               <div class="inner-flex">
-                <img
-                        id="share-modal-avatar"
-                        src="https://via.placeholder.com/300x300"
-                        data-demo-src="/img/avatars/dan.jpg"
-                        data-user-popover="1"
-                        alt=""
-                />
+                <img id="share-modal-avatar" src="https://via.placeholder.com/300x300" data-demo-src="/img/avatars/dan.jpg" data-user-popover="1" alt=""/>
                 <p id="share-modal-text">
                   Yesterday with <a href="#">@Karen Miller</a> and
                   <a href="#">@Marvin Stemperd</a> at the
@@ -3361,28 +3282,16 @@
           </div>
         </div>
         <div class="bottom-share-inputs">
-          <div
-                  id="action-place"
-                  class="field is-autocomplete is-dropup is-hidden"
-          >
+          <div id="action-place" class="field is-autocomplete is-dropup is-hidden">
             <div id="share-place" class="control share-bottom-channel-control">
-              <input
-                      type="text"
-                      class="input is-sm no-radius share-input simple-locations-autocpl"
-                      placeholder="Where are you?"
-              />
+              <input type="text" class="input is-sm no-radius share-input simple-locations-autocpl" placeholder="Where are you?"/>
               <div class="input-heading">Location :</div>
             </div>
           </div>
 
           <div id="action-tag" class="field is-autocomplete is-dropup is-hidden">
             <div id="share-tags" class="control share-bottom-channel-control">
-              <input
-                      id="share-friend-tags-autocpl"
-                      type="text"
-                      class="input is-sm no-radius share-input"
-                      placeholder="Who are you with"
-              />
+              <input id="share-friend-tags-autocpl" type="text" class="input is-sm no-radius share-input" placeholder="Who are you with"/>
               <div class="input-heading">Friends :</div>
             </div>
             <div id="share-modal-tag-list" class="tag-list no-margin"></div>
@@ -3396,10 +3305,7 @@
             <div class="footer-action" data-target-action="place">
               <i class="mdi mdi-map-marker"></i>
             </div>
-            <div
-                    class="footer-action dropdown is-spaced is-neutral dropdown-trigger is-up"
-                    data-target-action="permissions"
-            >
+            <div class="footer-action dropdown is-spaced is-neutral dropdown-trigger is-up" data-target-action="permissions">
               <div>
                 <i class="mdi mdi-lock-clock"></i>
               </div>
@@ -3447,16 +3353,10 @@
             </div>
           </div>
           <div class="button-wrap">
-            <button
-                    type="button"
-                    class="button is-solid dark-grey-button close-modal"
-            >
+            <button type="button" class="button is-solid dark-grey-button close-modal">
               Cancel
             </button>
-            <button
-                    type="button"
-                    class="button is-solid primary-button close-modal"
-            >
+            <button type="button" class="button is-solid primary-button close-modal">
               Publish
             </button>
           </div>

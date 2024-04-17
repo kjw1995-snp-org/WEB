@@ -6,5 +6,6 @@ package com.snp.web.common.url;
 public class FeedServiceUrl {
 
     public static final String FEED_INQUIRY = "/feeds/inquiry";
+    public static final String FEED_REGISTER = "/feeds/register";
 
 }

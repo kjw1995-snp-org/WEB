@@ -9,6 +9,8 @@ import lombok.*;
 @Getter
 public class MemberModel {
 
+    private Integer memberIdx;
+
     private String id;
 
     private String name;

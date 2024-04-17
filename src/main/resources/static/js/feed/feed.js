@@ -1,4 +1,5 @@
 const feedUrl = /*[[${urls.FEED_URI}]]*/ "";
+const feedRegisterUrl = /*[[${urls.FEED_REGISTER}]]*/ "";
 let postStr = '';
 let dateString = null;
 
@@ -344,4 +345,41 @@ function formatDate(dateStr) {
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
 }
+
+$(document).on('click','.feed-publish-btn', function(){
+
+    const content = $('.feed-content').val();
+    console.log(content);
+
+    const feedRegisterRequestDto = {
+        content: content
+    };
+
+    $.ajax({
+
+        url: feedRegisterUrl,
+        method: 'POST',
+        contentType: 'applcation/json',
+        dataType: 'application/json',
+        data: JSON.stringify(feedRegisterRequestDto),
+        success: function(result) {
+
+            if(result.status == 'SUC') {
+                alert(result.message);
+            }
+
+            if(result.status == 'ERR' || result.status == 'FAIL') {
+                alert(result.message);
+            }
+
+        },
+        error: function(err) {
+            alert('피드 등록 에러 발생');
+        }
+
+    });
+
+});
+
+
 

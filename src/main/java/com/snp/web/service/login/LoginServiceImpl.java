@@ -48,6 +48,7 @@ public class LoginServiceImpl implements LoginService {
         if(response.getStatus() == ApiResponseDto.ApiResponseStatus.SUC) {
 
             MemberModel memberModel = MemberModel.builder()
+                                                 .memberIdx(response.getData().getMemberIdx())
                                                  .id(response.getData().getId())
                                                  .name(response.getData().getName())
                                                  .build();

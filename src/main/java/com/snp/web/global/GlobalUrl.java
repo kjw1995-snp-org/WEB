@@ -27,6 +27,8 @@ public class GlobalUrl {
      * 피드
      */
     public static final String FEED_URI = "/feeds";
+    public static final String FEED_REGISTER = FEED_URI + "/register";
+
 
     /**
      * 마이페이지
