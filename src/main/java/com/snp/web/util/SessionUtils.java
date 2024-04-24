@@ -12,18 +12,17 @@ public class SessionUtils {
         setAttribute(USER_SESSION_KEY, sessionModel);
     }
 
-    public SessionModel getUserSession() { return getAttribute(USER_SESSION_KEY); }
+    public SessionModel getUserSession() { return (SessionModel)getAttribute(USER_SESSION_KEY); }
 
     public void removeSession() { removeAttribute(USER_SESSION_KEY); }
 
-    private SessionModel getAttribute(String key) {
-        return (SessionModel)ServletUtils.getSession().getAttribute(key);
+    private Object getAttribute(String key) {
+        return ServletUtils.getSession().getAttribute(key);
     }
 
     private void setAttribute(String key, Object value) {
         ServletUtils.getSession().setAttribute(key, value);
     }
-
 
     private void removeAttribute(String key) { ServletUtils.getSession().removeAttribute(key); }
 

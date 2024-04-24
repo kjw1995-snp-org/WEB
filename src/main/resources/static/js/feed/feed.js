@@ -1,8 +1,11 @@
+'use strict'
+
 let feedUrl = /*[[${urls.FEED_URI}]]*/ '';
 let feedRegisterUrl = /*[[${urls.FEED_REGISTER}]]*/ '';
 
 $.ajax({
-    url: feedUrl,
+
+    url: "/feed",
     method: 'POST',
     contentType: 'application/json',
     success: function(response) {
@@ -11,6 +14,7 @@ $.ajax({
     error: function (err) {
         alert('피드 리스트 조회 실패');
     }
+
 });
 
 function renderFeedList(response) {
@@ -19,7 +23,7 @@ function renderFeedList(response) {
 
     let dateString = null;
 
-    for(var i = 0; i < response.data.length; i++) {
+    for(let i = 0; i < response.data.length; i++) {
         dateString = new Date(response.data[i].regist_date);
 
         postStr += `
@@ -348,7 +352,7 @@ function formatDate(dateStr) {
 
 }
 
-function feedPublish(event) {
+function feedPublish() {
 
     const content = $('.feed-content').val();
     const feedRegisterRequestDto = {
@@ -357,28 +361,34 @@ function feedPublish(event) {
 
     $.ajax({
 
-        url: "/feeds/register",
+        url: "/feed/register",
         method: 'POST',
         contentType: 'application/json',
         dataType: 'json',
         data: JSON.stringify(feedRegisterRequestDto),
-        success: function (result) {
+        success: function(result) {
 
-            if (result.status == 'SUC') {
+            if (result.status === 'SUC') {
                 alert(result.message);
             }
 
-            if (result.status == 'ERR' || result.status == 'FAIL') {
+            if (result.status === 'ERR' || result.status === 'FAIL') {
                 alert(result.message);
             }
 
         },
-        error: function (err) {
+        error: function(err) {
             alert('피드 등록 에러 발생');
         }
 
     });
 
 }
+
+
+
+
+
+
 
 

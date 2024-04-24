@@ -1498,7 +1498,7 @@
           <!-- Publishing Area -->
           <!-- /partials/pages/feed/compose-card.html -->
           <div id="compose-card" class="card is-new-content">
-<!--            <th:block th:if="${sessionInfo != null}">-->
+            <th:block th:if="${sessionInfo != null}">
               <!-- Top tabs -->
               <div class="tabs-wrapper">
                   <div class="tabs is-boxed is-fullwidth">
@@ -1986,13 +1986,13 @@
                         <span>View More</span>
                       </button>
                       <!-- Publish button -->
-                      <button id="publish-button" type="button" class="button is-solid accent-button is-fullwidth is-disabled feed-publish-btn" onclick="feedPublish(event)">
+                      <button id="publish-button" type="button" class="button is-solid accent-button is-fullwidth is-disabled feed-publish-btn" onclick="feedPublish()">
                         Publish
                       </button>
                     </div>
                   </div>
               </div>
-<!--            </th:block>-->
+            </th:block>
           </div>
         </div>
         <!-- /Middle column -->

@@ -60,7 +60,6 @@ public class LoginServiceImpl implements LoginService {
                                                     .build()
             );
 
-
         }
 
         return response;
